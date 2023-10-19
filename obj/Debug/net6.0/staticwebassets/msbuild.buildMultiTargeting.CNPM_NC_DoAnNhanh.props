@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\CNPM_NC_DoAnNhanh.props" />
+</Project>

@@ -1,0 +1,218 @@
+﻿@*@model IEnumerable<Shopee_Food.Models.SanPham>*@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        background-color: white;
+        background-image: none;
+    }
+
+    .main_shop {
+    }
+
+    .header_shop {
+        /*background-color: white;*/
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    }
+
+    .header_detail {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        font-size: large;
+    }
+
+    .buy {
+        background-color: white;
+        width: 220px;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 10px;
+        border-color:orangered;
+        font-size:larger
+    }
+
+        .buy:hover {
+            background-color: rgba(255,87,34,.1);
+        }
+
+    .add {
+        background-color: orangered;
+        width: 220px;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 10px;
+        border-color: orangered;
+        font-size: larger
+    }
+
+        .add:hover {
+            background-color: #FF3333;
+        }
+
+    .menu_shop ul li {
+        color: gray;
+        padding: 0 10px;
+        margin-bottom: 5px;
+    }
+</style>
+    <div style="width: 100%; background-color: white;">
+    <div class="main_shop">
+        <div class="header_shop">
+            <img class="img_shop" style="object-fit: cover; width:45%;" src="https://cdn.tgdd.vn/Files/2017/03/22/963765/cach-lam-ga-ran-thom-ngon-8_760x450.jpg" />
+            <div class="header_detail">
+                <p style="color: cadetblue;"> Món Ăn -> Gà Rán</p>
+                <strong style="font-size: 50px; margin-bottom: 5px;"> Gà Rán </strong>
+                <p>Gà được rán lên bởi SANG </p>
+                @*<p style="color: cornflowerblue; margin-top: 15px;"> Thêm lượt đánh giá từ Foody.</p>*@
+                <p style="color: green">Mở cửa: 00:00 - 23:59 </p>
+                <p> Giá:  80.000 VNĐ</p>
+                @*<div style="width: 100%; height: 1px; background-color: darkgray; margin-top: 30px;"> </div>*@
+                <!--<div style="display: flex; ">-->
+                @*<p style="margin-right: 50px; color: gray;"> Phí dịch vụ: <br /> 0.00% </p>*@
+                @*<p style="color: orangered"> Dịch vụ bởi: <br /> <strong>ShopeeFood </strong> </p>*@
+
+                @*var getShop = ViewBag.Shop as Shopee_Food.Models.Shop;*@
+                @*< img class="img_shop" style="object-fit: cover; width:45%;" src="~/Images/@getShop.AnhBia" />*@
+                @*<img class="img_shop" style="object-fit: cover; width: 45%;" src="~/Images/@getShop.AnhBia" />*@
+                <!--</div>
+    </div>-->
+                <div style="display:flex">
+                    <p><button class="buy" style="color:orangered">Mua ngay</button></p>
+                    <p style="padding-left:10px"><button class="add" style="color:white">Thêm vào giỏ hàng</button></p>
+                </div>
+            </div>
+    </div>
+
+    <div class="main_shop" style="background-color: antiquewhite;width: 100%; padding: 20px;">
+        <div class="main_shop" style="background-color: antiquewhite;width: 100%; padding: 20px;">
+            <p> Thực Đơn</p>
+            <div style="display: flex; justify-content: space-evenly;">
+                <div class="menu_shop" style="background-color: white; width: 25%; height: 150px;margin-left: 50px; padding: 15px;">
+                    <ul>
+                        <a href="#sale_food">
+                        <li style="background-color: whitesmoke; border-radius: 20px; ">MÓN ĐANG GIẢM</li>
+                        <li style="background-color: whitesmoke; border-radius: 20px; ">MÓN ĐANG GIẢM</li>
+                        </a>
+                        <a href="#main_meal">
+                        <li> MÓN CHÍNH</li>
+                  
+                        </a>
+                        <a href="#sub_food">
+                        <li> MÓN THÊM</li>
+                        
+                        </a>
+                    </ul>
+                </div>
+                <div class="list_food" style="width: 55%; background-color: white; padding: 20px;">
+                    <div class="discount">
+                        <div class="item_discount" style="display: flex; height: 80px; align-items: center;">
+                            <i class="fa fa-tag " style="color: orangered; font-size: 30px; width: 50px; margin-left: 10px; margin-right: 10px;"></i>
+                            <p>Thanh toán thẻ Visa. Giảm 50K cho đơn từ 150K vào tất cả các ngày trong tuần. Áp dụng cho lần đầu thanh toán bằng thẻ Visa trên ShopeeFood</p>
+                        </div>
+                        <div class="item_discount" style="display: flex; height: 80px; align-items: center;">
+                            <i class="fa fa-tag " style="color: orangered; font-size: 30px; width: 50px; margin-left: 10px; margin-right: 10px;"></i>
+                            <p>Thanh toán bằng thẻ tín dụng Nam A Bank giảm 50.000 VNĐ cho hóa đơn từ 120.000 VNĐ</p>
+                        </div>
+                        <div class="item_discount" style="display: flex; height: 80px; align-items: center;">
+                            <i class="fa fa-tag " style="color: orangered; font-size: 30px; width: 50px; margin-left: 10px; margin-right: 10px;"></i>
+                            <p>Thanh toán thẻ tín dụng Home Credit giảm 30k cho hóa đơn 120k vào ngày thứ Hai đến chủ nhật</p>
+                        </div>
+                    </div>
+                    <div class="box_search" style=" padding: 5px 5px; border: 0.3px solid gray; margin: 20px;">
+                        <i class="fas fa-search search-icon" style="font-size: 15px; margin-right: 10px; margin-left: 10px;"></i>
+                        <input type="text" placeholder="Tìm kiếm" />
+                    </div>
+
+                    <a id="sale_food" style=" font-size: 20px; color: gray;">Món đang giảm giá</a>
+
+                    @*@{
+                        foreach (var i in Model)
+                        {
+                            <div class="card_food" style="margin-top: 20px; padding: 10px; display: flex; justify-content: space-between;">
+                                <div style="display: flex; align-items:start;">
+                                    <img style="object-fit: cover; width: 80px; margin-right: 30px;" src="https://images.foody.vn/res/g116/1155652/s120x120/aa296232-4b2a-4651-9153-de98b781-93324cb5-221117190509.jpeg" />
+                                    <strong>@i.TenSP</strong>
+                                </div>
+                                <div style="display: flex; align-items:start;">
+                                    <div style="margin-right: 20px;">
+                                        <del>15.000 vnđ</del>
+                                        <p> @i.DonGia vnđ</p>
+                                    </div>
+                                    <a href="@Url.Action("AddProduct", "Cart", new { MaSP = i.MaSP})">
+                                        <i class="fa-solid fa-plus" style="font-size: 30px; color: orangered; margin-top: 10px;"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        }
+                    }*@
+                    <div class="card_food" style="margin-top: 20px; padding: 10px; display: flex; justify-content: space-between;">
+                        <div style="display: flex; align-items:start;">
+                            <img style="object-fit: cover; width: 80px; margin-right: 30px;" src="https://images.foody.vn/res/g116/1155652/s120x120/aa296232-4b2a-4651-9153-de98b781-93324cb5-221117190509.jpeg" />
+                            <strong>Trà Tắc</strong>
+                        </div>
+                        <div style="display: flex; align-items:start;">
+                            <div style="margin-right: 20px;">
+                                <del>15.000 vnđ</del>
+                                <p> 1.000 vnđ</p>
+                            </div>
+                            <a>
+                                <i class="fa-solid fa-plus" style="font-size: 30px; color: orangered; margin-top: 10px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <a id="main_meal" style="font-size: 20px; color: gray;">Món chính</a>
+                    <div class="card_food" style="margin-top: 20px; padding: 10px; display: flex; justify-content: space-between;">
+                        <div style="display: flex; align-items:start;">
+                            <img style="object-fit: cover; width: 80px; margin-right: 30px;" src="https://images.foody.vn/res/g116/1155652/s120x120/852a6a3c-ba72-4ab4-b75a-3842331f-22974965-230128161310.jpeg" />
+                            <strong>Cơm sườn </strong>
+                        </div>
+                        <div style="display: flex; align-items:start;">
+                            <div style="margin-right: 20px;">
+                                <del>57.000 vnđ</del>
+                                <p> 49.000 vnđ</p>
+                            </div>
+                            <a>
+                                <i class="fa-solid fa-plus" style="font-size: 30px; color: orangered; margin-top: 10px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card_food" style="margin-top: 20px; padding: 10px; display: flex; justify-content: space-between;">
+                        <div style="display: flex; align-items:start;">
+                            <img style="object-fit: cover; width: 80px; margin-right: 30px;" src="https://images.foody.vn/res/g116/1155652/s120x120/0cf8bc96-a9b8-4c37-a38f-1503f037-bd0bafa2-230128161629.jpeg" />
+                            <strong>Cơm sườn ốp la</strong>
+                        </div>
+                        <div style="display: flex; align-items:start;">
+                            <div style="margin-right: 20px;">
+                                <del>79.000 vnđ</del>
+                                <p> 59.000 vnđ</p>
+                                @@ -190,27 +218,27 @@
+                                <i class="fa-solid fa-plus" style="font-size: 30px; color: orangered; margin-top: 10px;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card_food" style="margin-top: 20px; padding: 10px; display: flex; justify-content: space-between;">
+                            <div style="display: flex; align-items:start;">
+                                <img style="object-fit: cover; width: 80px; margin-right: 30px;" src="https://images.foody.vn/res/g116/1155652/s120x120/0cf8bc96-a9b8-4c37-a38f-1503f037-bd0bafa2-230128161629.jpeg" />
+                                <strong>Cơm sườn ốp la</strong>
+                            </div>
+                            <div style="display: flex; align-items:start;">
+                                <div style="margin-right: 20px;">
+                                    <del>79.000 vnđ</del>
+                                    <p> 59.000 vnđ</p>
+                                </div>
+                                <a>
+                                    <i class="fa-solid fa-plus" style="font-size: 30px; color: orangered; margin-top: 10px;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿@model List<MoAn>
+
+<h1>Danh sách người từ MongoDB</h1>
+<a href="~/Food/Create">
+    <button>
+        Thêm
+    </button>
+</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên món ăn</th>
+            <th>Ảnh</th>
+            <th>Giá tiền</th>
+            <th>Số lượng</th>
+            <th>Size</th>
+            <!-- Thêm các tiêu đề cột khác nếu cần -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var document in Model)
+        {
+            <tr>
+                @*      <td>@document["TenMonAn"]</td>
+            <td>   @document["GiaTien"]</td>
+            <td>@document["SoLuong"]</td>*@
+                <td>@document._id</td>
+                <td>@document.TenMonAn</td>
+                <td>@document.Img</td>
+                <td>@document.GiaTien</td>
+                <td>@document.SoLuong</td>
+                <td>@document.Size</td>
+                <!-- Hiển thị các giá trị cột khác tương tự -->
+                <td>
+                    <a asp-action="Edit" asp-route-id="@document._id">Sửa</a> |
+                    <a asp-action="Delete" asp-route-id="@document._id">Xóa</a>
+                    <a asp-action="Details" asp-route-id="@document._id">Chi tiết</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
