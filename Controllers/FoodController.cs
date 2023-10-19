@@ -44,9 +44,11 @@ namespace CNPM_NC_DoAnNhanh.Controllers
         //    var result = donHangCollection.Aggregate<BsonDocument>(pipeline).ToList();
         //return View(result);
         //}
-
-
-
+        [HttpGet]
+        public IActionResult Index_User()
+        {
+            return View();
+        }
 
         [HttpGet]
         public IActionResult Create()
