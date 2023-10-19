@@ -9,105 +9,105 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CNPM_NC_DoAnNhanh
 build_property.RootNamespace = CNPM_NC_DoAnNhanh
-build_property.ProjectDir = D:\CNPM_NC\CNPM_NC_DoAnNhanh\
+build_property.ProjectDir = C:\Users\ADMIN\Source\Repos\FastFood\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\CNPM_NC\CNPM_NC_DoAnNhanh
+build_property.MSBuildProjectDirectory = C:\Users\ADMIN\Source\Repos\FastFood
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Admin/Layout/_LayoutPage1.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Admin/Layout/_LayoutPage1.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QWRtaW5cTGF5b3V0XF9MYXlvdXRQYWdlMS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Default/Index.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/Default/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Default/Index_.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/Default/Index_.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxJbmRleF8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Food/Create.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/Food/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Food/Details.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/Food/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Food/Edit.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/Food/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Food/Index.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/Food/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Home/About.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Home/CartNoProduct.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/Home/CartNoProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXJ0Tm9Qcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Home/CartProduct.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/Home/CartProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXJ0UHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Home/Contact.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Home/details.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/Home/details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxkZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Home/Index.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Home/Privacy.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Shared/Error.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Shared/_Layout_cart.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/Shared/_Layout_cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfY2FydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Shared/_login.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/Shared/_login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9sb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Shared/_ViewProduct.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/Shared/_ViewProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WaWV3UHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/User/Info.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/User/Info.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmZvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/User/ViewKhuyenmai.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/User/ViewKhuyenmai.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxWaWV3S2h1eWVubWFpLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/_ViewImports.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/_ViewStart.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Shared/_Layout.cshtml]
+[C:/Users/ADMIN/Source/Repos/FastFood/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-1dklieacdu
