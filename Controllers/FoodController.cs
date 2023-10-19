@@ -45,7 +45,7 @@ namespace CNPM_NC_DoAnNhanh.Controllers
         //return View(result);
         //}
         [HttpGet]
-        public IActionResult Index_User()
+        public IActionResult Food()
         {
             return View();
         }
