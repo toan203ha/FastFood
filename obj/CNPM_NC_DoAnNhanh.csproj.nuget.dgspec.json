@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CNPM_NC\\CNPM_NC_DoAnNhanh\\CNPM_NC_DoAnNhanh.csproj": {}
+    "C:\\Users\\sangn\\OneDrive\\Desktop\\DaiHoc\\N3\\HK1\\Công nghệ phần mềm nâng cao\\Lý thuyết\\FastFood\\CNPM_NC_DoAnNhanh.csproj": {}
   },
   "projects": {
-    "D:\\CNPM_NC\\CNPM_NC_DoAnNhanh\\CNPM_NC_DoAnNhanh.csproj": {
+    "C:\\Users\\sangn\\OneDrive\\Desktop\\DaiHoc\\N3\\HK1\\Công nghệ phần mềm nâng cao\\Lý thuyết\\FastFood\\CNPM_NC_DoAnNhanh.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CNPM_NC\\CNPM_NC_DoAnNhanh\\CNPM_NC_DoAnNhanh.csproj",
+        "projectUniqueName": "C:\\Users\\sangn\\OneDrive\\Desktop\\DaiHoc\\N3\\HK1\\Công nghệ phần mềm nâng cao\\Lý thuyết\\FastFood\\CNPM_NC_DoAnNhanh.csproj",
         "projectName": "CNPM_NC_DoAnNhanh",
-        "projectPath": "D:\\CNPM_NC\\CNPM_NC_DoAnNhanh\\CNPM_NC_DoAnNhanh.csproj",
-        "packagesPath": "C:\\Users\\toan3\\.nuget\\packages\\",
-        "outputPath": "D:\\CNPM_NC\\CNPM_NC_DoAnNhanh\\obj\\",
+        "projectPath": "C:\\Users\\sangn\\OneDrive\\Desktop\\DaiHoc\\N3\\HK1\\Công nghệ phần mềm nâng cao\\Lý thuyết\\FastFood\\CNPM_NC_DoAnNhanh.csproj",
+        "packagesPath": "C:\\Users\\sangn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sangn\\OneDrive\\Desktop\\DaiHoc\\N3\\HK1\\Công nghệ phần mềm nâng cao\\Lý thuyết\\FastFood\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\toan3\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\sangn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,8 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,6 +47,14 @@
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.22.0, )"
+            },
+            "boost": {
+              "target": "Package",
+              "version": "[1.83.0, )"
+            },
+            "bootstrap": {
+              "target": "Package",
+              "version": "[5.3.2, )"
             }
           },
           "imports": [
@@ -74,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

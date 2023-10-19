@@ -4,7 +4,6 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Diagnostics;
-using CNPM_NC_DoAnNhanh.Models;
 
 namespace CNPM_NC_DoAnNhanh.Controllers
 {
