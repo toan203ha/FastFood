@@ -99,8 +99,8 @@
             <a href="/Home/Index"><img src="https://shopeefood.vn/app/assets/img/shopeefoodvn.png?4aa1a38e8da801f4029b80734905f3f7" style="object-fit:cover; width: 150px" /></a>
             <div class="nav_header">
                 <ul style="display: flex;list-style: none; padding-top: 20px;">
-                    <li><a href="~/Food/ViewFood" class="option">Đồ ăn</a></li>
-                    <li><a href="~/Drinks/ViewDrinks" class="option">Đồ uống</a></li>
+                    <li><a href="~/Food/Index" class="option">Đồ ăn</a></li>
+                    <li><a href="~/DoUong/Index" class="option">Đồ uống</a></li>
                     <li><a href="~/Combo/ViewCombo" class="option">Combo</a></li>
                 </ul>
             </div>
@@ -110,6 +110,18 @@
             <div class="login-register">
                 <a href="/Login/Dangnhap"><i class="fas fa-user"></i></a>
             </div>
+            <div>
+                @if (!string.IsNullOrEmpty(ViewBag.UserName))
+                {
+                    <p>Xin chào, @ViewBag.UserName!</p>
+                    <p>Xin chào, @ViewBag.UserID!</p>
+                }
+            </div>
+            <div >
+                <a href="~/GioHang/Index" class="option">Gio hang</a>
+            </div>
+            
+                
         </div>
     </div>
     <div class="container body-content">

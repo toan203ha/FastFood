@@ -1,0 +1,55 @@
+﻿@model List<CartItem>
+
+<h2>Your Cart</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Ten</td>
+                <td>@item.Dongia</td>
+                <td>
+                    <form asp-controller="GioHang" asp-action="UpdateQuantity" method="post">
+                        <input type="hidden" name="productId" value="@item.MaSP" />
+                        <input type="number" name="newQuantity" value="@item.Soluong" />
+                        <button type="submit">Update</button>
+                    </form>
+                </td>
+                <td>@(item.Dongia * item.Soluong)</td>
+            </tr>
+        }
+        @using (Html.BeginForm("ApplyVoucherToCart", "GioHang", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label for="_id">Mã Voucher:</label>
+                <input type="text" id="_id" name="_id" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Áp dụng Voucher</button>
+        }
+
+        <tr style="font-weight:bold; text-align:center;">
+            <td colspan="9">
+
+                @Html.ActionLink("ĐẶT HÀNG", "DatHang", null, new
+                {
+                @class = "btn btn-primary"
+                })
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div>
+    <a asp-controller="GioHang" asp-action="ClearCart" class="btn btn-danger">Clear Cart</a>
+
+</div>

@@ -11,7 +11,7 @@ namespace CNPM_NC_DoAnNhanh.Controllers
     public class FoodController : Controller
     {
 
-
+   
         private readonly IMongoDatabase _database;
 
         public FoodController(IMongoDatabase database)

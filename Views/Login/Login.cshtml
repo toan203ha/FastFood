@@ -1,0 +1,18 @@
+﻿@model KhachHang
+
+<h2>Đăng nhập</h2>
+<div class="alert alert-danger" asp-validation-summary="ModelOnly"></div>
+
+<form asp-action="Login" method="post">
+    <div class="form-group">
+        <label for="TK">Tài Khoản:</label>
+        <input type="text" class="form-control" id="TK" name="TK" asp-for="TK">
+    </div>
+    <div class="form-group">
+        <label for="PASS">Mật Khẩu:</label>
+        <input type="password" class="form-control" id="PASS" name="PASS" asp-for="PASS">
+    </div>
+    <button type="submit" class="btn btn-primary">Đăng nhập</button>
+</form>
+<p>@ViewBag.ErrorInfo</p>
+ 

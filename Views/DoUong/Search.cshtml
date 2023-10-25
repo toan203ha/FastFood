@@ -1,0 +1,12 @@
+﻿@model List<DoUong>
+
+<h2>Kết Quả Tìm Kiếm</h2>
+
+<ul>
+    @foreach (var doUong in Model)
+    {
+        <li>
+            @doUong.TenDoUong - Giá: @doUong.GiaTien
+        </li>
+    }
+</ul>

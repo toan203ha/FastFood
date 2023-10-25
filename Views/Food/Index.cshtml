@@ -1,6 +1,21 @@
 ﻿@model List<MoAn>
 
-<h1>Danh sách người từ MongoDB</h1>
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+ 
+}
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+
+<p>
+    @HttpContextAccessor.HttpContext.Session.GetString("UserID")
+    @HttpContextAccessor.HttpContext.Session.GetString("UserName")
+</p>
+
+<h1>Danh sách món ăn từ MongoDB</h1>
+
 <a href="~/Food/Create">
     <button>
         Thêm
@@ -23,9 +38,9 @@
         @foreach (var document in Model)
         {
             <tr>
-                @*      <td>@document["TenMonAn"]</td>
-            <td>   @document["GiaTien"]</td>
-            <td>@document["SoLuong"]</td>*@
+                @*<td>@document["TenMonAn"]</td>
+                  <td>@document["GiaTien"]</td>
+                  <td>@document["SoLuong"]</td>*@
                 <td>@document._id</td>
                 <td>@document.TenMonAn</td>
                 <td>@document.Img</td>
