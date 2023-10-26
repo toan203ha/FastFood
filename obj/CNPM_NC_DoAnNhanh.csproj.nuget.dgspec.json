@@ -22,10 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-<<<<<<< HEAD
-          "C:\\Program Files\\dotnet\\library-packs": {},
-=======
->>>>>>> 0ef9095237fd1914419e150953ef316ed323d71c
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
