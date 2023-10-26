@@ -1,5 +1,9 @@
-﻿@model WebApplication5.Models.MoAn
+﻿@model CNPM_NC_DoAnNhanh.Models.MoAn
 
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 <h1>Thông tin chi tiết sản phẩm</h1>
 
 <dl class="row">
@@ -20,3 +24,28 @@
     <dt class="col-sm-2">Size:</dt>
     <dd class="col-sm-10">@Model.Size</dd>
 </dl>
+
+<a class="btn btn-primary" href="@Url.Action("AddProduct", "GioHang", new
+{ MaSP = Model._id })">
+    Đặt mua
+</a>
+<form asp-controller="GioHang" asp-action="AddToCart" method="post">
+    <input type="hidden" name="productId" value="@Model._id" />
+    <input type="hidden" name="productName" value="@Model.TenMonAn" />
+    <input type="hidden" name="price" value="@Model.GiaTien" />
+    <input type="number" name="quantity" value="1" />
+    <button type="submit">Add to Cart</button>
+</form>
+
+
+
+@* <div>
+    <form asp-action="AddCart" asp-controller="ShoppingCart">
+        <input type="hidden" asp-for="_id" name="productId" />
+        <input type="hidden" asp-for="TenMonAn" name="productName" />
+        <input type="hidden" asp-for="GiaTien" name="price" />
+        <label for="quantity">Quantity:</label>
+        <input type="number" asp-for="SoLuong" name="quantity" value="1" />
+        <input type="submit" value="Add to Cart" />
+    </form>
+</div> *@

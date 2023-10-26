@@ -1,0 +1,52 @@
+﻿@model CNPM_NC_DoAnNhanh.Models.KhachHang
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>KhachHang</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="HoTenKH" class="control-label"></label>
+                <input asp-for="HoTenKH" class="form-control" />
+                <span asp-validation-for="HoTenKH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SDT" class="control-label"></label>
+                <input asp-for="SDT" class="form-control" />
+                <span asp-validation-for="SDT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiaChi" class="control-label"></label>
+                <input asp-for="DiaChi" class="form-control" />
+                <span asp-validation-for="DiaChi" class="text-danger"></span>
+            </div>
+ 
+            <div class="form-group">
+                <label asp-for="TK" class="control-label"></label>
+                <input asp-for="TK" class="form-control" />
+                <span asp-validation-for="TK" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PASS" class="control-label"></label>
+                <input asp-for="PASS" class="form-control" />
+                <span asp-validation-for="PASS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
