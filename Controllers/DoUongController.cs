@@ -31,6 +31,8 @@ namespace CNPM_NC_DoAnNhanh.Controllers
             }
             return PartialView(users);
         }
+
+
         [HttpGet]
         public IActionResult Index()
         {
