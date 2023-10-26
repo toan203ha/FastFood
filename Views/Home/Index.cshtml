@@ -42,19 +42,18 @@
         flex-direction: column;
         width: 50%;
         height: 100%;
+        padding-top: 80px;
 
     }
 
     .body_left {
         text-align:center;
-        margin:auto;
+        margin:100px;
     }
 
     .btn_sub_search {
         display: flex;
-        margin-top: 30px;
-        margin-bottom: 30px;
-        padding-left:75px;
+        padding-left:120px;
     }
 
     .ul_options {
@@ -106,7 +105,9 @@
         height: 600px; 
         border-radius: 10px;
         padding: 10px; 
-        overflow-y: scroll;    }
+        overflow-y: scroll; 
+        width: 70%;
+    }
     ::-webkit-scrollbar {
         width: 0;
     }
@@ -115,26 +116,26 @@
 <main>
     <div class="main_body">
         <div class="body_left">
-            <p style="font-size: 23px; color: white;">Đặt Đồ ăn, giao hàng từ 20'...</p>
-            <p style="color: white;">Có 82999 Địa Điểm Ở TP. HCM Từ 00:00 - 23:59</p>
+            <p style="font-size: 30px; color: white; text-align:left; padding-left:120px">Đặt Đồ ăn, giao hàng từ 20'...</p>
             <div class="btn_sub_search">
-                <input type="text" placeholder="Tìm địa điểm, món ăn, địa chỉ,..." style="width: 80%; height: 50px; padding: 8px 12px; border: 1px solid #ccc; border-top-left-radius:4px;border-bottom-left-radius:4px; font-size: 16px;" />
-                <span class="search-icon" style="display: flex; justify-content:center;align-items:center; width: 20%; background-color: deepskyblue; padding: 8px; border-top-right-radius: 4px; border-bottom-right-radius: 4px;">
+                <input type="text" placeholder="Tìm địa điểm, món ăn, địa chỉ,..." style="width: 60%; height: 30px; padding: 8px 12px; border: 1px solid #ccc; border-top-left-radius:4px;border-bottom-left-radius:4px; font-size: 16px;" />
+                <span class="search-icon" style="display: flex; justify-content:center;align-items:center; width: 20%; background-color: orangered; padding: 8px; border-top-right-radius: 4px; border-bottom-right-radius: 4px;">
                     <i class="fas fa-search" style="color: white;"></i>
                 </span>
             </div>
             <div class="nav_select">
                 <ul class="ul_options">
                     <li>All</li>
-                    <li> Đồ Ăn</li>
-                    <li>Combo Đặt biệt</li>
+                    <li>Đồ Ăn</li>
+                    <li>Đồ Uống</li>
+                    <li>Combo Đặt Biệt</li>
                 
                 </ul>
             </div>
         </div>
         <div class="body_right">
             <div class="div_BestSeller">
-                <p style=" color: black; font-size: 20px;">Best Seller</p>
+                <p style=" color: black; font-size: 30px; text-align:center; font-family:monospace; margin:15px">Best Seller</p>
                 <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
                     @*@{
             foreach (var i in Model)
@@ -152,85 +153,61 @@
                     <a href="#" class=" card_box">
                         <img style="object-fit: cover; width: 150px; margin-bottom: 10px;" src="https://images.foody.vn/res/g116/1155652/prof/s280x175/foody-upload-api-foody-mobile-im-6522b18f-221112225428.jpeg" />
                         <p class="name_sp"> Cơm Tấm ba ghiền</p>
-
-                        <p class="deal_sp"> DEAL 1K</p>
                     </a>
 
                     <a href="#" class=" card_box">
                         <img style="object-fit: cover; width: 150px; margin-bottom: 10px;" src="https://images.foody.vn/res/g116/1155652/prof/s280x175/foody-upload-api-foody-mobile-im-6522b18f-221112225428.jpeg" />
                         <p class="name_sp"> Cơm Tấm ba ghiền</p>
-                        
-                        <p class="deal_sp"> DEAL 1K</p>
                     </a>
 
                     <a href="#" class=" card_box">
                         <img style="object-fit: cover; width: 150px; margin-bottom: 10px;" src="https://images.foody.vn/res/g116/1155652/prof/s280x175/foody-upload-api-foody-mobile-im-6522b18f-221112225428.jpeg" />
                         <p class="name_sp"> Cơm Tấm ba ghiền</p>
-
-                        <p class="deal_sp"> DEAL 1K</p>
                     </a>
 
                     <a href="#" class=" card_box">
                         <img style="object-fit: cover; width: 150px; margin-bottom: 10px;" src="https://images.foody.vn/res/g116/1155652/prof/s280x175/foody-upload-api-foody-mobile-im-6522b18f-221112225428.jpeg" />
                         <p class="name_sp"> Cơm Tấm ba ghiền</p>
-                        
-                        <p class="deal_sp"> DEAL 1K</p>
                     </a>
 
                     <a class=" card_box">
                         <img style="object-fit: cover; width: 150px; margin-bottom: 10px;" src="https://images.foody.vn/res/g116/1155652/prof/s280x175/foody-upload-api-foody-mobile-im-6522b18f-221112225428.jpeg" />
                         <p class="name_sp"> Cơm Tấm ba ghiền</p>
-                        
-                        <p class="deal_sp"> DEAL 1K</p>
                     </a>
 
                     <a class=" card_box">
                         <img style="object-fit: cover; width: 150px; margin-bottom: 10px;" src="https://images.foody.vn/res/g116/1155652/prof/s280x175/foody-upload-api-foody-mobile-im-6522b18f-221112225428.jpeg" />
                         <p class="name_sp"> Cơm Tấm ba ghiền</p>
-                        
-                        <p class="deal_sp"> DEAL 1K</p>
                     </a>
 
                     <a class=" card_box">
                         <img style="object-fit: cover; width: 150px; margin-bottom: 10px;" src="https://images.foody.vn/res/g116/1155652/prof/s280x175/foody-upload-api-foody-mobile-im-6522b18f-221112225428.jpeg" />
                         <p class="name_sp"> Cơm Tấm ba ghiền</p>
-                        
-                        <p class="deal_sp"> DEAL 1K</p>
                     </a>
 
                     <a class=" card_box">
                         <img style="object-fit: cover; width: 150px; margin-bottom: 10px;" src="https://images.foody.vn/res/g116/1155652/prof/s280x175/foody-upload-api-foody-mobile-im-6522b18f-221112225428.jpeg" />
                         <p class="name_sp"> Cơm Tấm ba ghiền</p>
-                        
-                        <p class="deal_sp"> DEAL 1K</p>
                     </a>
 
                     <a class=" card_box">
                         <img style="object-fit: cover; width: 150px; margin-bottom: 10px;" src="https://images.foody.vn/res/g116/1155652/prof/s280x175/foody-upload-api-foody-mobile-im-6522b18f-221112225428.jpeg" />
                         <p class="name_sp"> Cơm Tấm ba ghiền</p>
-                        
-                        <p class="deal_sp"> DEAL 1K</p>
                     </a>
 
                     <a class=" card_box">
                         <img style="object-fit: cover; width: 150px; margin-bottom: 10px;" src="https://images.foody.vn/res/g116/1155652/prof/s280x175/foody-upload-api-foody-mobile-im-6522b18f-221112225428.jpeg" />
                         <p class="name_sp"> Cơm Tấm ba ghiền</p>
-                        
-                        <p class="deal_sp"> DEAL 1K</p>
                     </a>
 
                     <a class=" card_box">
                         <img style="object-fit: cover; width: 150px; margin-bottom: 10px;" src="https://images.foody.vn/res/g116/1155652/prof/s280x175/foody-upload-api-foody-mobile-im-6522b18f-221112225428.jpeg" />
                         <p class="name_sp"> Cơm Tấm ba ghiền</p>
-                        
-                        <p class="deal_sp"> DEAL 1K</p>
                     </a>
 
                     <a class=" card_box">
                         <img style="object-fit: cover; width: 150px; margin-bottom: 10px;" src="https://images.foody.vn/res/g116/1155652/prof/s280x175/foody-upload-api-foody-mobile-im-6522b18f-221112225428.jpeg" />
                         <p class="name_sp"> Cơm Tấm ba ghiền</p>
-                        
-                        <p class="deal_sp"> DEAL 1K</p>
                     </a>
                 </div>
             </div>

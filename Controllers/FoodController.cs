@@ -4,7 +4,6 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Diagnostics;
-using CNPM_NC_DoAnNhanh.Models;
 
 namespace CNPM_NC_DoAnNhanh.Controllers
 {
@@ -45,9 +44,11 @@ namespace CNPM_NC_DoAnNhanh.Controllers
         //    var result = donHangCollection.Aggregate<BsonDocument>(pipeline).ToList();
         //return View(result);
         //}
-
-
-
+        [HttpGet]
+        public IActionResult Food()
+        {
+            return View();
+        }
 
         [HttpGet]
         public IActionResult Create()

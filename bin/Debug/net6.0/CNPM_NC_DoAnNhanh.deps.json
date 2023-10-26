@@ -11,7 +11,9 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.23",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.23",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16",
-          "MongoDB.Driver": "2.22.0"
+          "MongoDB.Driver": "2.22.0",
+          "boost": "1.83.0",
+          "bootstrap": "5.3.2"
         },
         "runtime": {
           "CNPM_NC_DoAnNhanh.dll": {}
@@ -36,6 +38,8 @@
           }
         }
       },
+      "boost/1.83.0": {},
+      "bootstrap/5.3.2": {},
       "DnsClient/1.6.1": {
         "dependencies": {
           "Microsoft.Win32.Registry": "5.0.0"
@@ -2608,6 +2612,20 @@
       "sha512": "sha512-dGCVuVo0CFUKWW85W8YENO+aREf8sCBDjvGbnNvxJuNW4Ss+brEU9ltHhq2KfZze2VUNK1/wygbPG1bmbpyXEw==",
       "path": "awssdk.securitytoken/3.7.100.14",
       "hashPath": "awssdk.securitytoken.3.7.100.14.nupkg.sha512"
+    },
+    "boost/1.83.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cy53VNMzysEMvhBixDe8ujPk67Fcj3v6FPHQnH91NYJNLHpc6jxa2xq9ruCaaJjE4M3YrGSHDi4uUSTGBWw6EQ==",
+      "path": "boost/1.83.0",
+      "hashPath": "boost.1.83.0.nupkg.sha512"
+    },
+    "bootstrap/5.3.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-m0/GEaLwE35B8P1xScFhwAsQi5o6kWPzOVPdGkoFwv+5YjmbgXFPQai71N5APwRCU52ZO4vHYWJ5DYSqKKgivw==",
+      "path": "bootstrap/5.3.2",
+      "hashPath": "bootstrap.5.3.2.nupkg.sha512"
     },
     "DnsClient/1.6.1": {
       "type": "package",

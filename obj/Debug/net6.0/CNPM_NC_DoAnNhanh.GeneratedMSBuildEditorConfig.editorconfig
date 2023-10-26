@@ -20,6 +20,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QWRtaW5cTGF5b3V0XF9MYXlvdXRQYWdlMS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Combo/Combo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tYm9cQ29tYm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Default/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -44,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9Vb25nXFNlYXJjaC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Drink/Drink.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJpbmtcRHJpbmsuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Food/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -54,6 +62,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Food/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Food/Food.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZFxGb29kLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Food/Index.cshtml]
