@@ -40,6 +40,13 @@
                 <span asp-validation-for="Size" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="LoaiSanPham" class="control-label"></label>
+                <select asp-for="LoaiSanPham" asp-items="@ViewBag.LoaiSanPhamList" class="form-control">
+                    <option value="">Chọn loại sản phẩm</option>
+                </select>
+                <span asp-validation-for="LoaiSanPham" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>

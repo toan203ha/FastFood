@@ -23,6 +23,8 @@ namespace CNPM_NC_DoAnNhanh.Controllers
         {
             var collection = _database.GetCollection<MoAn>("MonAn");
             var monAnList = collection.Find(_ => true).ToList();
+
+            
             return View(monAnList);
         }
         //[HttpGet]

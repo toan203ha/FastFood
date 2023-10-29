@@ -1,55 +1,90 @@
 ﻿@model List<CartItem>
 
-<h2>Your Cart</h2>
+@* @if (ViewContext.RouteData.Values.ContainsKey("voucherApplied") && (bool)ViewContext.RouteData.Values["voucherApplied"])
+{
+    <div class="alert alert-success">
+        Mã giảm giá đã được áp dụng.
+    </div>
+} *@
+@if (Model != null && Model.Any())
+{
+    @if (ViewBag.VoucherApplied != null && (bool)ViewBag.VoucherApplied)
+    {
+        <div class="alert alert-success">
+            Mã giảm giá đã được áp dụng.
+        </div>
+    }
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
+
+
+
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Giỏ hàng</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Tổng tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Ten</td>
+                            <td>@item.Dongia</td>
+                            <td>
+                                <form asp-controller="GioHang" asp-action="UpdateQuantity" method="post">
+                                    <input type="hidden" name="productId" value="@item.MaSP" />
+                                    <input type="number" name="newQuantity" value="@item.Soluong" />
+                                    <button type="submit">Update</button>
+                                </form>
+                            </td> 
+                            <td>Tổng tiền: @(item.Total())</td>
+                            <td>
+                                <div>
+                                    <a asp-controller="GioHang" asp-action="ClearCart" class="btn btn-danger">Clear Cart</a>
+                                </div>
+                            </td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <h2>Mã giảm giá</h2>
+            <form asp-controller="GioHang" asp-action="ApplyDiscountCode" method="post">
+                <div class="form-group">
+                    <label for="discountCode">Nhập mã giảm giá:</label>
+                    <input type="text" id="discountCode" name="discountCode" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary">Áp dụng mã giảm giá</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <p class="text-right"><strong>Tổng tiền: @Model.Sum(item => item.Dongia * item.Soluong)</strong></p>
+        </div>
+        <div class="col-md-8">
+            <p class="text-right"><strong>Tổng số lượng: @Model.Sum(item => item.Soluong)</strong></p>
+        </div>
+    </div>
+    <tr style="font-weight:bold; text-align:center;">
+        <td colspan="9">
+            @Html.ActionLink("ĐẶT HÀNG", "DatHang", null, new
         {
-            <tr>
-                <td>@item.Ten</td>
-                <td>@item.Dongia</td>
-                <td>
-                    <form asp-controller="GioHang" asp-action="UpdateQuantity" method="post">
-                        <input type="hidden" name="productId" value="@item.MaSP" />
-                        <input type="number" name="newQuantity" value="@item.Soluong" />
-                        <button type="submit">Update</button>
-                    </form>
-                </td>
-                <td>@(item.Dongia * item.Soluong)</td>
-            </tr>
-        }
-        @using (Html.BeginForm("ApplyVoucherToCart", "GioHang", FormMethod.Post))
-        {
-            <div class="form-group">
-                <label for="_id">Mã Voucher:</label>
-                <input type="text" id="_id" name="_id" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-primary">Áp dụng Voucher</button>
-        }
-
-        <tr style="font-weight:bold; text-align:center;">
-            <td colspan="9">
-
-                @Html.ActionLink("ĐẶT HÀNG", "DatHang", null, new
-                {
-                @class = "btn btn-primary"
-                })
-
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-<div>
-    <a asp-controller="GioHang" asp-action="ClearCart" class="btn btn-danger">Clear Cart</a>
-
-</div>
+        @class = "btn btn-primary"
+        })
+        </td>
+    </tr>
+}
+else
+{
+    <p>Your cart is empty.</p>
+}

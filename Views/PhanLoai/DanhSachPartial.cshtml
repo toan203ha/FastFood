@@ -1,0 +1,12 @@
+﻿@model List<PhanLoai>
+
+<ul>
+    @foreach (var loaiSanPham in Model)
+    {
+        <li>
+            <a asp-controller="PhanLoai" asp-action="DanhSachSanPhamTheoDanhMuc" asp-route-id="@loaiSanPham._id">
+                @loaiSanPham.TenLoai
+            </a>
+        </li>
+    }
+</ul>
