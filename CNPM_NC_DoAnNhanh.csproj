@@ -7,29 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-<<<<<<< HEAD
-=======
-
->>>>>>> Toan
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.23" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.23">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-<<<<<<< HEAD
-=======
-
->>>>>>> Toan
     <None Include="wwwroot\Image\Logo.png" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="boost" Version="1.83.0" />
     <PackageReference Include="bootstrap" Version="5.3.2" />
-<<<<<<< HEAD
-=======
-
->>>>>>> Toan
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
     <PackageReference Include="MongoDB.Driver" Version="2.22.0" />
   </ItemGroup>

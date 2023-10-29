@@ -59,17 +59,12 @@
 <body>
     @foreach (var document in Model)
         {
-                @*<td>@document["TenMonAn"]</td>
-                  <td>@document["GiaTien"]</td>
-                  <td>@document["SoLuong"]</td>*@
                 <td>@document._id</td>
                 <td>@document.TenMonAn</td>
                 <td>@document.Img</td>
                 <td>@document.GiaTien</td>
                 <td>@document.SoLuong</td>
                 <td>@document.Size</td>
-                <!-- Hiển thị các giá trị cột khác tương tự -->
-                <td>
                 <div class="row">
                     <div class="card">
                         <img src="https://cdn.tgdd.vn/Files/2017/03/22/963765/cach-lam-ga-ran-thom-ngon-8_760x450.jpg" style="width:100%">

@@ -19,10 +19,6 @@ public class ShoppingCartController : Controller
     
     }
 
-
- 
-
-
     public IActionResult Index()
     {
         var cart = GetCart();

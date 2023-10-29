@@ -1,14 +1,7 @@
 ﻿@model List<MoAn>
 
-
-@{
-    ViewBag.Title = "Home Page";
-    Layout = "~/Views/Shared/_Layout.cshtml";
- 
-}
 @using Microsoft.AspNetCore.Http
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
-
 
 <p>
     @HttpContextAccessor.HttpContext.Session.GetString("UserID")
@@ -16,11 +9,6 @@
 </p>
 
 <h1>Danh sách món ăn từ MongoDB</h1>
-
-<<<<<<< HEAD
-=======
- 
->>>>>>> Toan
 @{
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
