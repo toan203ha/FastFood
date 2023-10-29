@@ -1,40 +1,39 @@
-﻿    using MongoDB.Driver;
-
-    namespace CNPM_NC_DoAnNhanh.Models
+﻿namespace CNPM_NC_DoAnNhanh.Models
+{
+    public class CartItem
     {
-        public class CartItem
+        public string MaSP { get; set; }
+        public string Ten { get; set; }
+        public string AnhBia { get; set; }
+        public Double Dongia { get; set; }
+        public int Soluong { get; set; }
+
+        public CartItem() { }
+
+        public CartItem(string productId, string productName, double price, int quantity)
         {
-
-
-        private readonly IMongoDatabase _database;
-
-        public CartItem(IMongoDatabase database)
-        {
-            _database = database;
+            MaSP = productId;
+            Ten = productName;
+            Dongia = price;
+            Soluong = quantity;
         }
-        public string MaSP{ get; set; }
-            public string Ten { get; set; }
-            public string AnhBia { get; set; }
-            public int Dongia { get; set; }
-            public int Soluong { get; set; }
 
-            public string MaCombo { get; set; }
-            public string MaNuoc { get; set; }
-            public string MaMonan { get; set; }
-             public int newQuantity { get; set; } 
-            public CartItem() { } 
-
-            public CartItem(string productId, string productName, int price, int quantity)
-            {
-                MaSP = productId;
-                Ten = productName;
-                Dongia = price;
-                Soluong = quantity;
-            }
         public double Total()
         {
             return Soluong * Dongia;
         }
- 
+
+        public void ApplyDiscount(double discountAmount)
+        {
+            // Áp dụng giảm giá cho sản phẩm
+            if (Dongia > discountAmount)
+            {
+                Dongia -= discountAmount;
+            }
+            else
+            {
+                Dongia = 0;
+            }
+        }
     }
-    }
+}

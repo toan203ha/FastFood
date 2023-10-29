@@ -1,0 +1,17 @@
+﻿@model List<PhanLoai>
+@{
+    ViewData["Title"] = "Danh sách loại sản phẩm";
+}
+<a href="~/PhanLoai/Create">
+    <button>
+        Thêm
+    </button>
+</a>
+<h2>Danh sách loại sản phẩm</h2>
+<div>
+    <h2>Danh sách phân loại</h2>
+    @await Html.PartialAsync("DanhSachPartial")
+</div>
+
+ 
+

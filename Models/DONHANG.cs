@@ -28,14 +28,7 @@ namespace CNPM_NC_DoAnNhanh.Models
         public Nullable<bool> HinhThucThanhToan { get; set; }
         [BsonElement("HinhThucGiaoHang")]
         public Nullable<bool> HinhThucGiaoHang { get; set; }
-
-
-   
-
-
-
-        [BsonElement("ChiTietDonHang")]
-        public List<CTDH> ChiTietDonHang { get; set; }
+ 
     }
 
 }

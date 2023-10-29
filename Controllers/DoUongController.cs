@@ -1,5 +1,6 @@
 ﻿using CNPM_NC_DoAnNhanh.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using MongoDB.Driver;
 
 namespace CNPM_NC_DoAnNhanh.Controllers
@@ -32,36 +33,55 @@ namespace CNPM_NC_DoAnNhanh.Controllers
             return PartialView(users);
         }
 
-
         [HttpGet]
         public IActionResult Index()
         {
-            var collection = _database.GetCollection<DoUong>("DoUong");
-            var monAnList = collection.Find(_ => true).ToList();
-            return View(monAnList);
-        }
+            var doUongCollection = _database.GetCollection<DoUong>("DoUong");
+            var phanLoaiCollection = _database.GetCollection<PhanLoai>("PhanLoai");
 
+            var danhSachDoUong = doUongCollection.Find(_ => true).ToList();
+            var danhSachLoaiSanPham = phanLoaiCollection.Find(_ => true).ToList();
+            foreach (var doUong in danhSachDoUong)
+            {
+                var loaiSanPham = danhSachLoaiSanPham.FirstOrDefault(l => l._id == doUong.LoaiSanPham);
+                if (loaiSanPham != null)
+                {
+                    doUong.LoaiSanPham = loaiSanPham.TenLoai;
+                }
+            }
+
+            return View(danhSachDoUong);
+        }
 
         [HttpGet]
         public IActionResult Create()
         {
+            var phanLoaiCollection = _database.GetCollection<PhanLoai>("PhanLoai");
+            var danhSachLoaiSanPham = phanLoaiCollection.Find(_ => true).ToList();
+
+            ViewBag.LoaiSanPhamList = new SelectList(danhSachLoaiSanPham, "_id", "TenLoai");
+
             return View();
         }
-
+ 
         [HttpPost]
-        public IActionResult Create(DoUong monAn)
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(DoUong doUong)
         {
             if (ModelState.IsValid)
             {
-                var collection = _database.GetCollection<DoUong>("DoUong");
-                collection.InsertOne(monAn);
+                var selectedLoaiSanPham = Request.Form["LoaiSanPham"];
+                doUong.LoaiSanPham = selectedLoaiSanPham;
+                var doUongCollection = _database.GetCollection<DoUong>("DoUong");
+                doUongCollection.InsertOne(doUong);
+
                 return RedirectToAction("Index");
             }
-            if (!ModelState.IsValid)
-            {
-                Console.WriteLine("Lỗi");
-            }
-            return View(monAn);
+            var phanLoaiCollection = _database.GetCollection<PhanLoai>("PhanLoai");
+            var danhSachLoaiSanPham = phanLoaiCollection.Find(_ => true).ToList();
+            ViewBag.LoaiSanPhamList = new SelectList(danhSachLoaiSanPham, "_id", "TenLoai");
+
+            return View(doUong);
         }
 
 
@@ -91,7 +111,8 @@ namespace CNPM_NC_DoAnNhanh.Controllers
                     .Set("Img", monAn.Img)
                     .Set("GiaTien", monAn.GiaTien)
                     .Set("SoLuong", monAn.SoLuong)
-                    .Set("Size", monAn.Size);
+                    .Set("Size", monAn.Size)
+                    .Set("LoaiSanPham", monAn.Size);
 
                 var result = collection.UpdateOne(filter, update);
 

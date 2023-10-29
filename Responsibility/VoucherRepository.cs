@@ -9,12 +9,11 @@ public class VoucherRepository
 
     public VoucherRepository(IMongoDatabase database)
     {
-        _voucherCollection = database.GetCollection<Vourcher>("Vourchers");
+        _voucherCollection = database.GetCollection<Vourcher>("Vourcher");
     }
 
-    public Vourcher GetVoucherByCode(string maVoucher)
-    {
-        var filter = Builders<Vourcher>.Filter.Eq(v => v._id, maVoucher);
-        return _voucherCollection.Find(filter).SingleOrDefault();
-    }
+     public Vourcher GetDiscountCodeByCode(string code)
+        {
+            return _voucherCollection.Find(x => x.TenVoucher == code).FirstOrDefault();
+        }
 }

@@ -132,6 +132,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUmVnaXN0ZXJVc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/PhanLoai/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhhbkxvYWlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/PhanLoai/DanhSachPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhhbkxvYWlcRGFuaFNhY2hQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/PhanLoai/DanhSachSanPham.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhhbkxvYWlcRGFuaFNhY2hTYW5QaGFtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/PhanLoai/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhhbkxvYWlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

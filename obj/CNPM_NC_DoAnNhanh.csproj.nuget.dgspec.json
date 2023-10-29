@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sangn\\OneDrive\\Desktop\\DaiHoc\\N3\\HK1\\Công nghệ phần mềm nâng cao\\Lý thuyết\\FastFood\\CNPM_NC_DoAnNhanh.csproj": {}
+    "D:\\CNPM_NC\\CNPM_NC_DoAnNhanh\\CNPM_NC_DoAnNhanh.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sangn\\OneDrive\\Desktop\\DaiHoc\\N3\\HK1\\Công nghệ phần mềm nâng cao\\Lý thuyết\\FastFood\\CNPM_NC_DoAnNhanh.csproj": {
+    "D:\\CNPM_NC\\CNPM_NC_DoAnNhanh\\CNPM_NC_DoAnNhanh.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sangn\\OneDrive\\Desktop\\DaiHoc\\N3\\HK1\\Công nghệ phần mềm nâng cao\\Lý thuyết\\FastFood\\CNPM_NC_DoAnNhanh.csproj",
+        "projectUniqueName": "D:\\CNPM_NC\\CNPM_NC_DoAnNhanh\\CNPM_NC_DoAnNhanh.csproj",
         "projectName": "CNPM_NC_DoAnNhanh",
-        "projectPath": "C:\\Users\\sangn\\OneDrive\\Desktop\\DaiHoc\\N3\\HK1\\Công nghệ phần mềm nâng cao\\Lý thuyết\\FastFood\\CNPM_NC_DoAnNhanh.csproj",
-        "packagesPath": "C:\\Users\\sangn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sangn\\OneDrive\\Desktop\\DaiHoc\\N3\\HK1\\Công nghệ phần mềm nâng cao\\Lý thuyết\\FastFood\\obj\\",
+        "projectPath": "D:\\CNPM_NC\\CNPM_NC_DoAnNhanh\\CNPM_NC_DoAnNhanh.csproj",
+        "packagesPath": "C:\\Users\\toan3\\.nuget\\packages\\",
+        "outputPath": "D:\\CNPM_NC\\CNPM_NC_DoAnNhanh\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\sangn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\toan3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,10 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+<<<<<<< HEAD
+=======
+          "C:\\Program Files\\dotnet\\library-packs": {},
+>>>>>>> Toan
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

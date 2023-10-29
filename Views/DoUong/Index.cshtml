@@ -1,12 +1,21 @@
-﻿git@model List<DoUong>
+﻿@model List<DoUong>
 
 @{
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 
-<h1>Danh sách người từ MongoDB</h1>
-<a href="~/Food/Create">
+
+<p>
+    @HttpContextAccessor.HttpContext.Session.GetString("UserID")
+    @HttpContextAccessor.HttpContext.Session.GetString("UserName")
+</p>
+
+
+<h1>Danh sách sản phẩm từ MongoDB</h1>
+<a href="~/DoUong/Create">
     <button>
         Thêm
     </button>
@@ -52,6 +61,7 @@
             <th>Giá tiền</th>
             <th>Số lượng</th>
             <th>Size</th>
+            <th>Loại sản phẩm</th>
             <!-- Thêm các tiêu đề cột khác nếu cần -->
         </tr>
     </thead>
@@ -68,6 +78,7 @@
                 <td>@document.GiaTien</td>
                 <td>@document.SoLuong</td>
                 <td>@document.Size</td>
+                <td>@(document != null ? document.LoaiSanPham: "Không có thông tin")</td>               
                 <td>
                     <a asp-action="Edit" asp-route-id="@document._id">Sửa</a> |
                     <a asp-action="Delete" asp-route-id="@document._id">Xóa</a>

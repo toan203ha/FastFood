@@ -114,5 +114,11 @@ app.UseAuthorization();
 app.UseSession();
 app.MapControllerRoute(
     name: "default",
+<<<<<<< HEAD
     pattern: "{controller=Home}/{action=Index}/{id?}");
+=======
+
+    pattern: "{controller=PhanLoai}/{action=Index}/{id?}");
+
+>>>>>>> Toan
 app.Run();

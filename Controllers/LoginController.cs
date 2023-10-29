@@ -1,6 +1,7 @@
 ﻿using CNPM_NC_DoAnNhanh.Models;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace CNPM_NC_DoAnNhanh.Controllers
@@ -20,19 +21,22 @@ namespace CNPM_NC_DoAnNhanh.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(UserModel model)
+        public async Task<IActionResult> Login(KhachHang model)
         {
-            var khachHang = await _khachHangCollection.Find(k => k.TK == model.TK && k.PASS == model.Pass).FirstOrDefaultAsync();
+            var khachHang = await _khachHangCollection.Find(k => k.TK == model.TK && k.PASS == model.PASS).FirstOrDefaultAsync();
 
             if (khachHang != null)
             {
                 ViewBag.ThongBao = "Chúc mừng đăng nhập thành công";
                 // Đăng nhập thành công, lưu thông tin người dùng vào Session
+                //HttpContext.Session.SetString("taikhoan", khachHang.ToString());
+                HttpContext.Session.SetString("taikhoan", JsonSerializer.Serialize(khachHang));
                 HttpContext.Session.SetString("UserID", khachHang._id.ToString());
                 HttpContext.Session.SetString("UserName", khachHang.HoTenKH);
+
                 ViewBag.UserName = khachHang.HoTenKH;
                 ViewBag.UserID = khachHang._id;
-                return RedirectToAction("Index", "Food");
+                return RedirectToAction("Index", "DoUong");
             }
             // Đăng nhập thất bại, hiển thị thông báo lỗi
             ViewBag.ErrorInfo = "Sai thông tin đăng nhập";

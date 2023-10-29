@@ -26,5 +26,8 @@ namespace CNPM_NC_DoAnNhanh.Models
 
         [BsonElement("MoTa")]
         public string MoTa { get; set; }
+        // Thuộc tính lưu trạng thái mã giảm giá
+        public bool IsUsed { get; set; } = false;
+
     }
 }
