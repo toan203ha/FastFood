@@ -114,10 +114,5 @@ app.UseAuthorization();
 app.UseSession();
 app.MapControllerRoute(
     name: "default",
-<<<<<<< HEAD
-    pattern: "{controller=Vourcher}/{action=Index}/{id?}");
-=======
-    pattern: "{controller=home}/{action=Index}/{id?}");
-
->>>>>>> 0ef9095237fd1914419e150953ef316ed323d71c
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 app.Run();
