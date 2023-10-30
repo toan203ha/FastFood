@@ -185,6 +185,10 @@
       "PackagePath": "staticwebassets\\Image\\Logo.png"
     },
     {
+      "Id": "D:\\CNPM_NC\\CNPM_NC_DoAnNhanh\\wwwroot\\css\\Admin.css",
+      "PackagePath": "staticwebassets\\css\\Admin.css"
+    },
+    {
       "Id": "D:\\CNPM_NC\\CNPM_NC_DoAnNhanh\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

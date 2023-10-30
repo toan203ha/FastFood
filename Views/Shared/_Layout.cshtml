@@ -104,27 +104,26 @@
             <a href="/Home/Index"> <img src="~/Image/Logo.png" style="object-fit:cover; width: 80px; padding-top:10px" /></a>
             <div class="nav_header">
                 <ul style="display: flex;list-style: none; padding-top: 15px; font-size:20px">
-					<li><a href="~/Food/Food" class="option">Đồ ăn</a></li>
-                    <li><a href="~/DoUong/Index" class="option">Đồ uống</a></li>
-                    <li><a href="~/Combo/Combo" class="option">Combo</a></li>
+                    <li><a href="~/PhanLoai/DanhSachSanPhamTheoDanhMuc/653b94a68c2a5169fe4b8241" class="option">Đồ ăn</a></li>
+                    <li><a href="~/PhanLoai/DanhSachSanPhamTheoDanhMuc/653b949e8c2a5169fe4b823f" class="option">Đồ uống</a></li>
+                    <li><a href="~/PhanLoai/DanhSachSanPhamTheoDanhMuc/653b94ab8c2a5169fe4b8244" class="option">Combo</a></li>
+
                 </ul>
             </div>
             <div class="icon_search">
                 <i class="fas fa-search search-icon"></i>
             </div>
+        
             <div class="login-register">
                 <a href="/Login/Login"><i class="fas fa-user"></i></a>
             </div>
+     
    
             <div>
-                @if (!string.IsNullOrEmpty(ViewBag.UserName))
-                {
-                    <p>Xin chào, @ViewBag.UserName!</p>
-                    <p>Xin chào, @ViewBag.UserID!</p>
-                }
+ 
             </div>
             <div >
-                <a href="~/GioHang/Index" class="option">Gio hang</a>
+                <a href="~/GioHang/Index" class="option">Giỏ Hàng</a>
             </div>             
         </div>
     </div>

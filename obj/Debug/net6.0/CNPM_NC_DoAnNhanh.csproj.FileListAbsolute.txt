@@ -502,3 +502,5 @@ C:\Users\sangn\OneDrive\Desktop\DaiHoc\N3\HK1\Công nghệ phần mềm nâng ca
 C:\Users\sangn\OneDrive\Desktop\DaiHoc\N3\HK1\Công nghệ phần mềm nâng cao\Lý thuyết\FastFood\obj\Debug\net6.0\CNPM_NC_DoAnNhanh.genruntimeconfig.cache
 C:\Users\sangn\OneDrive\Desktop\DaiHoc\N3\HK1\Công nghệ phần mềm nâng cao\Lý thuyết\FastFood\obj\Debug\net6.0\ref\CNPM_NC_DoAnNhanh.dll
 >>>>>>> 0ef9095237fd1914419e150953ef316ed323d71c
+D:\CNPM_NC\CNPM_NC_DoAnNhanh\bin\Debug\net6.0\PayPal.dll
+D:\CNPM_NC\CNPM_NC_DoAnNhanh\bin\Debug\net6.0\PayPalCoreSDK.dll

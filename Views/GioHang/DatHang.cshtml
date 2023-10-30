@@ -3,9 +3,7 @@
 @{
     ViewBag.Title = "DatHang";
     Layout = "~/Views/Shared/_Layout.cshtml";
- 
     KhachHang khach = Context.Session.Get<KhachHang>("taikhoan");
-
 }
 
 <h2 style="text-align:center">THÔNG TIN GIỎ HÀNG</h2>
@@ -55,6 +53,12 @@
         <td>@DateTime.Now.ToShortDateString()</td>
     </tr>
     <tr>
+
+        <H1>Thanh toán ở đây </H1>
+@*         <p> <a href="/Shoppingcart/PaymentWithPaypal">
+            thanh toán
+        </a> *@
+            </p>
         <td colspan="2" style="text-align: center;">
             @Html.ActionLink("ĐỒNG Ý ĐẶT HÀNG", "DongYDatHang", null, new
             {

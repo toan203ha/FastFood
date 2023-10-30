@@ -40,6 +40,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9Vb25nXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/DoUong/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9Vb25nXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/DoUong/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9Vb25nXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -166,14 +170,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/Shared/_ViewProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WaWV3UHJvZHVjdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/ShoppingCart/CartPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcHBpbmdDYXJ0XENhcnRQYXJ0aWFsLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/ShoppingCart/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcHBpbmdDYXJ0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/CNPM_NC/CNPM_NC_DoAnNhanh/Views/User/Info.cshtml]

@@ -63,6 +63,14 @@
               "target": "Package",
               "version": "[2.22.0, )"
             },
+            "PayPal": {
+              "target": "Package",
+              "version": "[1.9.1, )"
+            },
+            "PayPalCoreSDK": {
+              "target": "Package",
+              "version": "[1.7.1, )"
+            },
             "boost": {
               "target": "Package",
               "version": "[1.83.0, )"

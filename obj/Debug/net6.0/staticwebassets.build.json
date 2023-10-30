@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tzc0EAEkCuBtdOhvq7bRN4A9lTbdyOLznyCRNkS6MO4=",
+  "Hash": "aq3Sruw4Vt/gnTkRx4oweGBVZhYXV8SvbrAI6xZccN4=",
   "Source": "CNPM_NC_DoAnNhanh",
   "BasePath": "_content/CNPM_NC_DoAnNhanh",
   "Mode": "Default",
@@ -797,6 +797,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\CNPM_NC\\CNPM_NC_DoAnNhanh\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CNPM_NC_DoAnNhanh.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\CNPM_NC\\CNPM_NC_DoAnNhanh\\wwwroot\\css\\Admin.css",
+      "SourceId": "CNPM_NC_DoAnNhanh",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CNPM_NC\\CNPM_NC_DoAnNhanh\\wwwroot\\",
+      "BasePath": "_content/CNPM_NC_DoAnNhanh",
+      "RelativePath": "css/Admin.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Admin.css"
     },
     {
       "Identity": "D:\\CNPM_NC\\CNPM_NC_DoAnNhanh\\wwwroot\\css\\site.css",
