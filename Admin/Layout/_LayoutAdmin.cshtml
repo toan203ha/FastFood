@@ -9,13 +9,15 @@
     <link href="~/css/Admin.css" rel="stylesheet" />>
     <script src="~/Scripts/ADMIN.js"></script>
     <style>
-
+        .page-content-body{
+            background-image: url('	https://shopeefood.vn/app/assets/img/main-banner.jpg?45bff8c9ec408a5ba51f9fdef662324e');
+            color: white;
+        }
     </style>
 </head>
 
 <body>
     <svg style="display:none;">
-        
         <symbol id="down" viewBox="0 0 16 16">
             <polygon points="3.81 4.38 8 8.57 12.19 4.38 13.71 5.91 8 11.62 2.29 5.91 3.81 4.38" />
         </symbol>
@@ -131,98 +133,26 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#0">
+                    <a href="/DoUong/Index">
                         <svg>
                             <use xlink:href="#appearance"></use>
                         </svg>
-                        <span>NƯỚC</span>
+                        <span>SẢN PHẨM</span>
                     </a>
-                </li>
-                <li>
-                    <a href="#0">
-                        <svg>
-                            <use xlink:href="#appearance"></use>
-                        </svg>
-                        <span>COMBO</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#0">
-                        <svg>
-                            <use xlink:href="#appearance"></use>
-                        </svg>
-                        <span>MÓN ĂN</span>
-                    </a>
-                </li>
-
-                <li class="menu-heading">
-                    <h3>Settings</h3>
-                </li>
-                <li>
-                    <a href="#0">
-                        <svg>
-                            <use xlink:href="#settings"></use>
-                        </svg>
-                        <span>Settings</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#0">
-                        <svg>
-                            <use xlink:href="#options"></use>
-                        </svg>
-                        <span>Options</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#0">
-                        <svg>
-                            <use xlink:href="#charts"></use>
-                        </svg>
-                        <span>Charts</span>
-                    </a>
-                </li>
-                <li>
-                   
-                   
                 </li>
             </ul>
         </nav>
     </header>
-    <section class="page-content">
+   <section class="page-content">
         <section class="search-and-user">
-            <form>
-                <input type="search" placeholder="Tìm kiếm ...">
-                <button type="submit" aria-label="submit form">
-                    <svg aria-hidden="true">
-                        <use xlink:href="#search"></use>
-                    </svg>
-                </button>
-            </form>
-            <div class="admin-profile">
-                <span class="greeting">Hello admin</span>
-                <div class="notifications">
-                    <span class="badge">1</span>
-                    <svg>
-                        <use xlink:href="#users"></use>
-                    </svg>
-                </div>
-            </div>
         </section>
-        <section class="grid">
+    </section>
+   <section>
             <article>
                 @RenderBody()
             </article>
-            @*<article></article>
-            <article></article>
-            <article></article>
-            <article></article>
-            <article></article>
-            <article></article>
-            <article></article>*@
-        </section>
+    </section>
         <footer class="page-footer">
-          
         </footer>
     </section>
 </body>

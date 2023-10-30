@@ -90,7 +90,10 @@ namespace CNPM_NC_DoAnNhanh.Controllers
         {
             var collection = _database.GetCollection<DoUong>("DoUong");
             var monAn = collection.Find(x => x._id == id).FirstOrDefault();
+            var phanLoaiCollection = _database.GetCollection<PhanLoai>("PhanLoai");
+            var danhSachLoaiSanPham = phanLoaiCollection.Find(_ => true).ToList();
 
+            ViewBag.LoaiSanPhamList = new SelectList(danhSachLoaiSanPham, "_id", "TenLoai");
             if (monAn == null)
             {
                 return NotFound();
@@ -102,6 +105,9 @@ namespace CNPM_NC_DoAnNhanh.Controllers
         [HttpPost]
         public IActionResult Edit(DoUong monAn)
         {
+            var phanLoaiCollection = _database.GetCollection<PhanLoai>("PhanLoai");
+            var danhSachLoaiSanPham = phanLoaiCollection.Find(_ => true).ToList();
+            ViewBag.LoaiSanPhamList = new SelectList(danhSachLoaiSanPham, "_id", "TenLoai");
             if (ModelState.IsValid)
             {
                 var collection = _database.GetCollection<DoUong>("DoUong");
@@ -112,7 +118,7 @@ namespace CNPM_NC_DoAnNhanh.Controllers
                     .Set("GiaTien", monAn.GiaTien)
                     .Set("SoLuong", monAn.SoLuong)
                     .Set("Size", monAn.Size)
-                    .Set("LoaiSanPham", monAn.Size);
+                    .Set("LoaiSanPham", monAn.LoaiSanPham);
 
                 var result = collection.UpdateOne(filter, update);
 
