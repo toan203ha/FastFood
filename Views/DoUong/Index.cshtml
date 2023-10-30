@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Home Page";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Admin/Layout/_LayoutAdmin.cshtml";
 }
 @using Microsoft.AspNetCore.Http
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
@@ -12,80 +12,88 @@
     @HttpContextAccessor.HttpContext.Session.GetString("UserID")
     @HttpContextAccessor.HttpContext.Session.GetString("UserName")
 </p>
+<style>
+    .form-control{
+        font-size:20px;
+        border-radius:2px;
+        border:none;
+        margin-left:30px;
+        text-align:center;
+        font-family: math;
+    }
+    td{
+        padding:5px;
+    }
+    th{
+        padding:10px;
+        font-family: math;
+    }
 
+    .add-pro{
+        padding:10px;
+        font-size:15px;
+        text-align:center;
+        background-color:orangered;
+        border-radius:3px;
+    }
+</style>
+<body>
+    <form id="search-form" method="get" asp-action="Search">
+        <div class="form-group" style="margin-bottom:20px">
+            <label for="keyword" style="font-size:25px; padding-left:100px; font-family:math;">Tìm sản phẩm:</label>
+            <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Tìm kiếm..." />
+        </div>
+    </form>
+    <script>
+        $(document).ready(function () {
+            $("#keyword").on("input", function () {
+                // Lấy giá trị từ khóa từ input
+                var keyword = $(this).val();
 
-<h1>Danh sách sản phẩm từ MongoDB</h1>
-<a href="~/DoUong/Create">
-    <button>
-        Thêm
-    </button>
-</a>
-
-<form id="search-form" method="get" asp-action="Search">
-    <div class="form-group">
-        <label for="keyword">Tìm kiếm theo tên đồ uống:</label>
-        <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Nhập từ khóa tìm kiếm">
-    </div>
-</form>
-
-<h3>Kết Quả Tìm Kiếm</h3>
-
-<ul id="search-results">
-    @Html.Partial("Search", new List<DoUong>())
-</ul>
-
-<script>
-    $(document).ready(function () {
-        $("#keyword").on("input", function () {
-            // Lấy giá trị từ khóa từ input
-            var keyword = $(this).val();
-
-            // Gửi yêu cầu tìm kiếm bằng AJAX
-            $.get("/DoUong/Search?keyword=" + keyword, function (data) {
-                // Cập nhật danh sách kết quả tìm kiếm
-                $("#search").html(data);
+                // Gửi yêu cầu tìm kiếm bằng AJAX
+                $.get("/DoUong/Search?keyword=" + keyword, function (data) {
+                    // Cập nhật danh sách kết quả tìm kiếm
+                    $("#search").html(data);
+                });
             });
         });
-    });
-</script>
-
-
-
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Tên đồ uống</th>
-            <th>Ảnh</th>
-            <th>Giá tiền</th>
-            <th>Số lượng</th>
-            <th>Size</th>
-            <th>Loại sản phẩm</th>
-            <!-- Thêm các tiêu đề cột khác nếu cần -->
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var document in Model)
-        {
-            <tr>
-                @*      <td>@document["TenMonAn"]</td>
-            <td>   @document["GiaTien"]</td>
-            <td>@document["SoLuong"]</td>*@
-                <td>@document._id</td>
-                <td>@document.TenDoUong</td>
-                <td>@document.Img</td>
-                <td>@document.GiaTien</td>
-                <td>@document.SoLuong</td>
-                <td>@document.Size</td>
-                <td>@(document != null ? document.LoaiSanPham: "Không có thông tin")</td>               
-                <td>
-                    <a asp-action="Edit" asp-route-id="@document._id">Sửa</a> |
-                    <a asp-action="Delete" asp-route-id="@document._id">Xóa</a>
-                    <a asp-action="Details" asp-route-id="@document._id">Chi tiết</a>
-
-                </td>
+    </script>
+    <table class="table" style="padding-left:100px">
+        <thead>
+            <tr style="padding:10px">
+                <th>Tên đồ uống</th>
+                <th>Ảnh</th>
+                <th>Giá tiền</th>
+                <th>Số lượng</th>
+                <th>Size</th>
+                <th>Loại sản phẩm</th>
+                <!-- Thêm các tiêu đề cột khác nếu cần -->
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var document in Model)
+            {
+                <tr>
+                    <td>@document.TenDoUong</td>
+                    <td>@document.Img</td>
+                    <td>@document.GiaTien</td>
+                    <td>@document.SoLuong</td>
+                    <td>@document.Size</td>
+                    <td>@(document != null ? document.LoaiSanPham: "Không có thông tin")</td>               
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@document._id" style="color:orangered;">Sửa</a> |
+                        <a asp-action="Delete" asp-route-id="@document._id" style="color:orangered;">Xóa</a> |
+                        <a asp-action="Details" asp-route-id="@document._id" style="color:orangered;"> Chi tiết</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div style="text-align:center; padding:10px;">
+        <a href="~/DoUong/Create">
+            <button class="add-pro">
+                Thêm sản phẩm
+            </button>
+        </a>
+    </div>
+</body>

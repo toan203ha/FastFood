@@ -20,10 +20,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QWRtaW5cTGF5b3V0XF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sangn/OneDrive/Desktop/DaiHoc/N3/HK1/Công nghệ phần mềm nâng cao/Lý thuyết/FastFood_Web/Views/Combo/Combo.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tYm9cQ29tYm8uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/sangn/OneDrive/Desktop/DaiHoc/N3/HK1/Công nghệ phần mềm nâng cao/Lý thuyết/FastFood_Web/Views/Default/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -40,36 +36,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9Vb25nXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/sangn/OneDrive/Desktop/DaiHoc/N3/HK1/Công nghệ phần mềm nâng cao/Lý thuyết/FastFood_Web/Views/DoUong/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9Vb25nXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/sangn/OneDrive/Desktop/DaiHoc/N3/HK1/Công nghệ phần mềm nâng cao/Lý thuyết/FastFood_Web/Views/DoUong/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9Vb25nXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/sangn/OneDrive/Desktop/DaiHoc/N3/HK1/Công nghệ phần mềm nâng cao/Lý thuyết/FastFood_Web/Views/DoUong/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9Vb25nXFNlYXJjaC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/sangn/OneDrive/Desktop/DaiHoc/N3/HK1/Công nghệ phần mềm nâng cao/Lý thuyết/FastFood_Web/Views/Drink/Drink.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJpbmtcRHJpbmsuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/sangn/OneDrive/Desktop/DaiHoc/N3/HK1/Công nghệ phần mềm nâng cao/Lý thuyết/FastFood_Web/Views/Food/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZFxDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/sangn/OneDrive/Desktop/DaiHoc/N3/HK1/Công nghệ phần mềm nâng cao/Lý thuyết/FastFood_Web/Views/Food/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZFxEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/sangn/OneDrive/Desktop/DaiHoc/N3/HK1/Công nghệ phần mềm nâng cao/Lý thuyết/FastFood_Web/Views/Food/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZFxFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/sangn/OneDrive/Desktop/DaiHoc/N3/HK1/Công nghệ phần mềm nâng cao/Lý thuyết/FastFood_Web/Views/Food/Food.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZFxGb29kLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/sangn/OneDrive/Desktop/DaiHoc/N3/HK1/Công nghệ phần mềm nâng cao/Lý thuyết/FastFood_Web/Views/Food/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vZFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/sangn/OneDrive/Desktop/DaiHoc/N3/HK1/Công nghệ phần mềm nâng cao/Lý thuyết/FastFood_Web/Views/GioHang/DatHang.cshtml]
