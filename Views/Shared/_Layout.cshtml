@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -86,8 +86,6 @@
         .option {
             color:black;
             text-decoration:none;
-            font-size:25px;
-            padding-top: 20px;
         }
 
             .option:hover {
@@ -105,28 +103,40 @@
         <div class="main_header">
             <a href="/Home/Index"> <img src="~/Image/Logo.png" style="object-fit:cover; width: 80px; padding-top:10px" /></a>
             <div class="nav_header">
+<<<<<<< HEAD
                 <ul style="display: flex;list-style: none; padding-top: 10px;">
                     <li><a href="~/PhanLoai/DanhSachSanPhamTheoDanhMuc/653b94a68c2a5169fe4b8241" class="option">Đồ ăn</a></li>
                     <li><a href="~/PhanLoai/DanhSachSanPhamTheoDanhMuc/653b949e8c2a5169fe4b823f" class="option">Đồ uống</a></li>
                     <li><a href="~/PhanLoai/DanhSachSanPhamTheoDanhMuc/653b94ab8c2a5169fe4b8244" class="option">Combo</a></li>
+=======
+                <ul style="display: flex;list-style: none; padding-top: 15px; font-size:20px">
+                    <li><a href="~/PhanLoai/DanhSachSanPhamTheoDanhMuc/653b94a68c2a5169fe4b8241" class="option">Đồ ăn</a></li>
+                    <li><a href="~/PhanLoai/DanhSachSanPhamTheoDanhMuc/653b949e8c2a5169fe4b823f" class="option">Đồ uống</a></li>
+                    <li><a href="~/PhanLoai/DanhSachSanPhamTheoDanhMuc/653b94ab8c2a5169fe4b8244" class="option">Combo</a></li>
+
+>>>>>>> adedd2fb7f9a5f4133313789e82dc55cd680af53
                 </ul>
             </div>
             <div class="icon_search">
                 <i class="fas fa-search search-icon"></i>
             </div>
+        
             <div class="login-register">
                 <a href="/Login/Login"><i class="fas fa-user"></i></a>
             </div>
+     
+   
             <div>
-                @if (!string.IsNullOrEmpty(ViewBag.UserName))
-                {
-                    <p>Xin chào, @ViewBag.UserName!</p>
-                    <p>Xin chào, @ViewBag.UserID!</p>
-                }
+ 
             </div>
             <div >
+<<<<<<< HEAD
+                <a href="~/GioHang/Index" class="option">Giỏ Hàng</a>
+            </div>             
+=======
                 <a href="~/GioHang/Index" class="fa fa-shopping-cart" style="padding-top:20px; font-size:25px; color:black;"></a>
             </div>           
+>>>>>>> Sangg
         </div>
     </div>
     <div class="container body-content">
