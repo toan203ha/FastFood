@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I0bCyyF3mZpzqAfV8frDcuD5xp9/NH91S9ZEdFUhzr714l0r4HQgKgZMOJaKjrnx5EiKXTHcSrnitL6h2rO0sg==",
+  "dgSpecHash": "JAFkh8V/WSf/uO8UkE+XGtfVamP1A05MQTAcRohjiiwu9VsCnjWIKmw00qzlzsvEMjBBGuv7b+fiFFIdVcxKKg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sangn\\OneDrive\\Desktop\\DaiHoc\\N3\\HK1\\Công nghệ phần mềm nâng cao\\Lý thuyết\\FastFood_Web\\CNPM_NC_DoAnNhanh.csproj",
+  "projectFilePath": "C:\\Users\\sangn\\OneDrive\\Desktop\\DaiHoc\\N3\\HK1\\Công nghệ phần mềm nâng cao\\Lý thuyết\\FastFood_Web - Copy\\CNPM_NC_DoAnNhanh.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sangn\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\sangn\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
@@ -232,12 +232,5 @@
     "C:\\Users\\sangn\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\sangn\\.nuget\\packages\\zstdsharp.port\\0.6.2\\zstdsharp.port.0.6.2.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\sangn\\OneDrive\\Desktop\\DaiHoc\\N3\\HK1\\Công nghệ phần mềm nâng cao\\Lý thuyết\\FastFood_Web\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

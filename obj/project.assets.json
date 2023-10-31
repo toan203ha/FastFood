@@ -27099,11 +27099,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sangn\\OneDrive\\Desktop\\DaiHoc\\N3\\HK1\\Công nghệ phần mềm nâng cao\\Lý thuyết\\FastFood_Web\\CNPM_NC_DoAnNhanh.csproj",
+      "projectUniqueName": "C:\\Users\\sangn\\OneDrive\\Desktop\\DaiHoc\\N3\\HK1\\Công nghệ phần mềm nâng cao\\Lý thuyết\\FastFood_Web - Copy\\CNPM_NC_DoAnNhanh.csproj",
       "projectName": "CNPM_NC_DoAnNhanh",
-      "projectPath": "C:\\Users\\sangn\\OneDrive\\Desktop\\DaiHoc\\N3\\HK1\\Công nghệ phần mềm nâng cao\\Lý thuyết\\FastFood_Web\\CNPM_NC_DoAnNhanh.csproj",
+      "projectPath": "C:\\Users\\sangn\\OneDrive\\Desktop\\DaiHoc\\N3\\HK1\\Công nghệ phần mềm nâng cao\\Lý thuyết\\FastFood_Web - Copy\\CNPM_NC_DoAnNhanh.csproj",
       "packagesPath": "C:\\Users\\sangn\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sangn\\OneDrive\\Desktop\\DaiHoc\\N3\\HK1\\Công nghệ phần mềm nâng cao\\Lý thuyết\\FastFood_Web\\obj\\",
+      "outputPath": "C:\\Users\\sangn\\OneDrive\\Desktop\\DaiHoc\\N3\\HK1\\Công nghệ phần mềm nâng cao\\Lý thuyết\\FastFood_Web - Copy\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sangn\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27181,13 +27181,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\sangn\\OneDrive\\Desktop\\DaiHoc\\N3\\HK1\\Công nghệ phần mềm nâng cao\\Lý thuyết\\FastFood_Web\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
