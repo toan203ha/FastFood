@@ -13,6 +13,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16",
           "MongoDB.Driver": "2.22.0",
           "PayPal": "1.9.1",
+<<<<<<< HEAD
+=======
+          "PayPalCoreSDK": "1.7.1",
+>>>>>>> dc570f7c3ab9b70b9d916b4baf05e4b44317fa1e
           "boost": "1.83.0",
           "bootstrap": "5.3.2"
         },
@@ -1733,6 +1737,20 @@
           }
         }
       },
+<<<<<<< HEAD
+=======
+      "PayPalCoreSDK/1.7.1": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "lib/net451/PayPalCoreSDK.dll": {
+            "assemblyVersion": "1.7.1.0",
+            "fileVersion": "1.7.1.0"
+          }
+        }
+      },
+>>>>>>> dc570f7c3ab9b70b9d916b4baf05e4b44317fa1e
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
@@ -3514,6 +3532,16 @@
       "path": "paypal/1.9.1",
       "hashPath": "paypal.1.9.1.nupkg.sha512"
     },
+<<<<<<< HEAD
+=======
+    "PayPalCoreSDK/1.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hGOLo3X2vgOpOWJI91+vlBgr/Dchk3xZAF0bdIpKiAwjlRKMjzSC4zuT1eGwmQ8uVL1IaGBZwNGklyRHDniYlQ==",
+      "path": "paypalcoresdk/1.7.1",
+      "hashPath": "paypalcoresdk.1.7.1.nupkg.sha512"
+    },
+>>>>>>> dc570f7c3ab9b70b9d916b4baf05e4b44317fa1e
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",
       "serviceable": true,

@@ -2413,6 +2413,21 @@
           }
         }
       },
+<<<<<<< HEAD
+=======
+      "PayPalCoreSDK/1.7.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "7.0.1"
+        },
+        "compile": {
+          "lib/net451/PayPalCoreSDK.dll": {}
+        },
+        "runtime": {
+          "lib/net451/PayPalCoreSDK.dll": {}
+        }
+      },
+>>>>>>> dc570f7c3ab9b70b9d916b4baf05e4b44317fa1e
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
         "runtimeTargets": {
@@ -23022,6 +23037,25 @@
         "paypal.nuspec"
       ]
     },
+<<<<<<< HEAD
+=======
+    "PayPalCoreSDK/1.7.1": {
+      "sha512": "hGOLo3X2vgOpOWJI91+vlBgr/Dchk3xZAF0bdIpKiAwjlRKMjzSC4zuT1eGwmQ8uVL1IaGBZwNGklyRHDniYlQ==",
+      "type": "package",
+      "path": "paypalcoresdk/1.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/PayPalCoreSDK.dll",
+        "lib/net35/PayPalCoreSDK.dll",
+        "lib/net40/PayPalCoreSDK.dll",
+        "lib/net45/PayPalCoreSDK.dll",
+        "lib/net451/PayPalCoreSDK.dll",
+        "paypalcoresdk.1.7.1.nupkg.sha512",
+        "paypalcoresdk.nuspec"
+      ]
+    },
+>>>>>>> dc570f7c3ab9b70b9d916b4baf05e4b44317fa1e
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "sha512": "HdSSp5MnJSsg08KMfZThpuLPJpPwE5hBXvHwoKWosyHHfe8Mh5WKT0ylEOf6yNzX6Ngjxe4Whkafh5q7Ymac4Q==",
       "type": "package",
@@ -27123,6 +27157,10 @@
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16",
       "MongoDB.Driver >= 2.22.0",
       "PayPal >= 1.9.1",
+<<<<<<< HEAD
+=======
+      "PayPalCoreSDK >= 1.7.1",
+>>>>>>> dc570f7c3ab9b70b9d916b4baf05e4b44317fa1e
       "boost >= 1.83.0",
       "bootstrap >= 5.3.2"
     ]
@@ -27194,6 +27232,13 @@
             "target": "Package",
             "version": "[1.9.1, )"
           },
+<<<<<<< HEAD
+=======
+          "PayPalCoreSDK": {
+            "target": "Package",
+            "version": "[1.7.1, )"
+          },
+>>>>>>> dc570f7c3ab9b70b9d916b4baf05e4b44317fa1e
           "boost": {
             "target": "Package",
             "version": "[1.83.0, )"
@@ -27236,6 +27281,19 @@
       "targetGraphs": [
         "net6.0"
       ]
+<<<<<<< HEAD
+=======
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'PayPalCoreSDK 1.7.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "PayPalCoreSDK",
+      "targetGraphs": [
+        "net6.0"
+      ]
+>>>>>>> dc570f7c3ab9b70b9d916b4baf05e4b44317fa1e
     }
   ]
 }

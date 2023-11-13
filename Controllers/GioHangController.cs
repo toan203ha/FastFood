@@ -26,8 +26,14 @@ namespace CNPM_NC_DoAnNhanh.Controllers
             _voucherRepository = voucherRepository;
             _configuration = configuration;
         }
+<<<<<<< HEAD
 
         //vourcher
+=======
+
+
+        // áp dụng mẫ giảm giá
+>>>>>>> dc570f7c3ab9b70b9d916b4baf05e4b44317fa1e
         public IActionResult ApplyDiscountCode(string discountCode)
         {
             var cart = HttpContext.Session.Get<List<CartItem>>("Cart") ?? new List<CartItem>();     
@@ -180,7 +186,15 @@ namespace CNPM_NC_DoAnNhanh.Controllers
             ViewBag.TongT = TinhTongTien();
             return View(giohang);
         }
+<<<<<<< HEAD
  
+=======
+
+    
+     
+
+         //đặt hàng
+>>>>>>> dc570f7c3ab9b70b9d916b4baf05e4b44317fa1e
         public IActionResult HoanThanhDonHang()
         {
             return View();
