@@ -94,13 +94,7 @@ namespace CNPM_NC_DoAnNhanh.Controllers
             var phanLoaiCollection = _database.GetCollection<PhanLoai>("PhanLoai");
             var danhSachLoaiSanPham = phanLoaiCollection.Find(_ => true).ToList();
 
-<<<<<<< HEAD
-=======
-
-            var phanLoaiCollection = _database.GetCollection<PhanLoai>("PhanLoai");
-            var danhSachLoaiSanPham = phanLoaiCollection.Find(_ => true).ToList();
-
->>>>>>> dc570f7c3ab9b70b9d916b4baf05e4b44317fa1e
+  
             ViewBag.LoaiSanPhamList = new SelectList(danhSachLoaiSanPham, "_id", "TenLoai");
             if (monAn == null)
             {
@@ -118,9 +112,7 @@ namespace CNPM_NC_DoAnNhanh.Controllers
             ViewBag.LoaiSanPhamList = new SelectList(danhSachLoaiSanPham, "_id", "TenLoai");
             if (ModelState.IsValid)
             {
-                var phanLoaiCollection = _database.GetCollection<PhanLoai>("PhanLoai");
-                var danhSachLoaiSanPham = phanLoaiCollection.Find(_ => true).ToList();
-                ViewBag.LoaiSanPhamList = new SelectList(danhSachLoaiSanPham, "_id", "TenLoai");
+        
 
 
                 var collection = _database.GetCollection<DoUong>("DoUong");

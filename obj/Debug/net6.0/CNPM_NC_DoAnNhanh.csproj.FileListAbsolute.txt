@@ -502,7 +502,6 @@ C:\Users\sangn\OneDrive\Desktop\DaiHoc\N3\HK1\Công nghệ phần mềm nâng ca
 C:\Users\sangn\OneDrive\Desktop\DaiHoc\N3\HK1\Công nghệ phần mềm nâng cao\Lý thuyết\FastFood\obj\Debug\net6.0\CNPM_NC_DoAnNhanh.genruntimeconfig.cache
 C:\Users\sangn\OneDrive\Desktop\DaiHoc\N3\HK1\Công nghệ phần mềm nâng cao\Lý thuyết\FastFood\obj\Debug\net6.0\ref\CNPM_NC_DoAnNhanh.dll
 >>>>>>> 0ef9095237fd1914419e150953ef316ed323d71c
-<<<<<<< HEAD
 C:\Users\sangn\OneDrive\Desktop\DaiHoc\N3\HK1\Công nghệ phần mềm nâng cao\Lý thuyết\FastFood\bin\Debug\net6.0\json.json
 C:\Users\sangn\OneDrive\Desktop\DaiHoc\N3\HK1\Công nghệ phần mềm nâng cao\Lý thuyết\FastFood\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\sangn\OneDrive\Desktop\DaiHoc\N3\HK1\Công nghệ phần mềm nâng cao\Lý thuyết\FastFood\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
@@ -1318,7 +1317,6 @@ D:\CNPM_NC\Thư mục mới\FastFood_Web - Copy\obj\Debug\net6.0\CNPM_NC_DoAnNh
 D:\CNPM_NC\Thư mục mới\FastFood_Web - Copy\obj\Debug\net6.0\CNPM_NC_DoAnNhanh.genruntimeconfig.cache
 D:\CNPM_NC\Thư mục mới\FastFood_Web - Copy\obj\Debug\net6.0\ref\CNPM_NC_DoAnNhanh.dll
 D:\CNPM_NC\Thư mục mới\FastFood_Web - Copy\bin\Debug\net6.0\PayPal.dll
-=======
 D:\CNPM_NC\CNPM_NC_DoAnNhanh\bin\Debug\net6.0\PayPal.dll
 D:\CNPM_NC\CNPM_NC_DoAnNhanh\bin\Debug\net6.0\PayPalCoreSDK.dll
 >>>>>>> dc570f7c3ab9b70b9d916b4baf05e4b44317fa1e

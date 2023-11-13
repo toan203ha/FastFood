@@ -185,19 +185,11 @@
       "PackagePath": "staticwebassets\\Image\\Logo.png"
     },
     {
-<<<<<<< HEAD
       "Id": "D:\\CNPM_NC\\Thư mục mới\\FastFood_Web - Copy\\wwwroot\\css\\Admin.css",
       "PackagePath": "staticwebassets\\css\\Admin.css"
     },
     {
       "Id": "D:\\CNPM_NC\\Thư mục mới\\FastFood_Web - Copy\\wwwroot\\css\\site.css",
-=======
-      "Id": "D:\\CNPM_NC\\CNPM_NC_DoAnNhanh\\wwwroot\\css\\Admin.css",
-      "PackagePath": "staticwebassets\\css\\Admin.css"
-    },
-    {
-      "Id": "D:\\CNPM_NC\\CNPM_NC_DoAnNhanh\\wwwroot\\css\\site.css",
->>>>>>> dc570f7c3ab9b70b9d916b4baf05e4b44317fa1e
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {

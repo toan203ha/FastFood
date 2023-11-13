@@ -67,13 +67,6 @@
               "target": "Package",
               "version": "[1.9.1, )"
             },
-<<<<<<< HEAD
-=======
-            "PayPalCoreSDK": {
-              "target": "Package",
-              "version": "[1.7.1, )"
-            },
->>>>>>> dc570f7c3ab9b70b9d916b4baf05e4b44317fa1e
             "boost": {
               "target": "Package",
               "version": "[1.83.0, )"
