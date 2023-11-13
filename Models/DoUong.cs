@@ -6,8 +6,6 @@ namespace CNPM_NC_DoAnNhanh.Models
 {
     public class DoUong
     {
- 
-
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string _id { get; set; } = ObjectId.GenerateNewId().ToString();// ObjectId cho trường _id trong MongoDB

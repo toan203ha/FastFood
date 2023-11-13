@@ -4,50 +4,45 @@
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div>
+<a asp-action="Index">Back to List</a>
+</div>
+<style>
+    .content-left{
+        float:left;
+    }
+    .content-right{
+        float:right;
+    }
 
-<h1>Details</h1>
+</style>
 
 <div>
-    <h4>DoUong</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TenDoUong)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TenDoUong)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Img)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Img)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GiaTien)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GiaTien)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SoLuong)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SoLuong)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Size)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Size)
-        </dd>
-    </dl>
+    <div class="content-left">
+        <img src="@Model.Img" alt="Hình ảnh" width="500" height="500" />
+    </div>
+    <div class="content-right">
+        <div>
+                @Html.DisplayFor(model => model.TenDoUong) - @Html.DisplayFor(model => model.GiaTien) VNĐ Đồng.
+            </div>
+            <div>
+                Kích cỡ: @Html.DisplayFor(model => model.Size) -  Số lượng còn: @Html.DisplayFor(model => model.SoLuong).
+            </div>
+        <form asp-controller="GioHang" asp-action="AddToCart" method="post">
+                <input type="hidden" name="productId" value="@Model._id" />
+                <input type="hidden" name="productName" value="@Model.TenDoUong" />
+                <input type="hidden" name="price" value="@Model.GiaTien" />
+                <input type="number" name="quantity" value="1" />
+                <button type="submit"> Thêm giỏ hàng</button>
+            </form>
+    </div>
 </div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
-</div>
+ 
 
+
+ 
+
+<<<<<<< HEAD
  
 <form asp-controller="GioHang" asp-action="AddToCart" method="post">
     <input type="hidden" name="productId" value="@Model._id" />
@@ -56,3 +51,5 @@
     <input type="number" name="quantity" value="1" />
     <button type="submit">Add to Cart</button>
 </form>
+=======
+>>>>>>> dc570f7c3ab9b70b9d916b4baf05e4b44317fa1e

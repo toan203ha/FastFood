@@ -7,6 +7,7 @@ namespace CNPM_NC_DoAnNhanh.Controllers
 {
     public class DoUongController : Controller
     {
+        //khai báo
         private readonly IMongoDatabase _database;
 
         public DoUongController(IMongoDatabase database)
@@ -14,12 +15,12 @@ namespace CNPM_NC_DoAnNhanh.Controllers
             _database = database;
         }
 
+        // tìm kiếm
         public List<DoUong> SearchUsers(IMongoCollection<DoUong> collection, string keyword)
         {
             var filter = Builders<DoUong>.Filter.Where(u => u.TenDoUong.ToLower().Contains(keyword));
             return collection.Find(filter).ToList();
         }
-
         // tìm kiếm 
         [HttpGet]
         public IActionResult Search(string keyword)
@@ -32,7 +33,7 @@ namespace CNPM_NC_DoAnNhanh.Controllers
             }
             return PartialView(users);
         }
-
+        //hiển thị danh sách sản phẩm
         [HttpGet]
         public IActionResult Index()
         {
@@ -93,6 +94,13 @@ namespace CNPM_NC_DoAnNhanh.Controllers
             var phanLoaiCollection = _database.GetCollection<PhanLoai>("PhanLoai");
             var danhSachLoaiSanPham = phanLoaiCollection.Find(_ => true).ToList();
 
+<<<<<<< HEAD
+=======
+
+            var phanLoaiCollection = _database.GetCollection<PhanLoai>("PhanLoai");
+            var danhSachLoaiSanPham = phanLoaiCollection.Find(_ => true).ToList();
+
+>>>>>>> dc570f7c3ab9b70b9d916b4baf05e4b44317fa1e
             ViewBag.LoaiSanPhamList = new SelectList(danhSachLoaiSanPham, "_id", "TenLoai");
             if (monAn == null)
             {
@@ -110,6 +118,11 @@ namespace CNPM_NC_DoAnNhanh.Controllers
             ViewBag.LoaiSanPhamList = new SelectList(danhSachLoaiSanPham, "_id", "TenLoai");
             if (ModelState.IsValid)
             {
+                var phanLoaiCollection = _database.GetCollection<PhanLoai>("PhanLoai");
+                var danhSachLoaiSanPham = phanLoaiCollection.Find(_ => true).ToList();
+                ViewBag.LoaiSanPhamList = new SelectList(danhSachLoaiSanPham, "_id", "TenLoai");
+
+
                 var collection = _database.GetCollection<DoUong>("DoUong");
                 var filter = Builders<DoUong>.Filter.Eq("_id", monAn._id);
                 var update = Builders<DoUong>.Update
@@ -130,6 +143,7 @@ namespace CNPM_NC_DoAnNhanh.Controllers
                 {
                     // Xử lý lỗi
                 }
+
             }
             return View(monAn);
         }

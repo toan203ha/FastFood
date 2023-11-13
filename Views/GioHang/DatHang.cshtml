@@ -3,7 +3,10 @@
 @{
     ViewBag.Title = "DatHang";
     Layout = "~/Views/Shared/_Layout.cshtml";
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc570f7c3ab9b70b9d916b4baf05e4b44317fa1e
     KhachHang khach = Context.Session.Get<KhachHang>("taikhoan");
 }
 
@@ -81,6 +84,12 @@
         </td>
     </tr>
     <tr>
+
+        <H1>Thanh toán ở đây </H1>
+@*         <p> <a href="/Shoppingcart/PaymentWithPaypal">
+            thanh toán
+        </a> *@
+            </p>
         <td colspan="2" style="text-align: center;">
             @using (Html.BeginForm("DongYDatHang", "GioHang", FormMethod.Post))
             {
