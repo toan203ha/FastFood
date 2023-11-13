@@ -1,12 +1,82 @@
 ﻿@model List<DoUong>
-
-<h2>Kết Quả Tìm Kiếm</h2>
-
-<ul>
-    @foreach (var doUong in Model)
-    {
-        <li>
-            @doUong.TenDoUong - Giá: @doUong.GiaTien
-        </li>
+@{
+    ViewBag.Title = "Index_User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    body {
+        background-image: url('	https://shopeefood.vn/app/assets/img/main-banner.jpg?45bff8c9ec408a5ba51f9fdef662324e');
     }
-</ul>
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 250px;
+        margin: auto;
+        max-width: 250px;
+        background-color: #F8F8FF;
+        text-align: center;
+        font-family: arial;
+        padding: 30px;
+        margin: 0 20px 20px 0;
+        border-radius: 10px;
+    }
+
+        .card:hover {
+            cursor: pointer;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+    .price {
+        color: grey;
+        font-size: 22px;
+    }
+
+    .card button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: orangered;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+        border-radius: 10px;
+    }
+
+    .row {
+        display: flex;
+        padding: 50px;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin: 80px;
+        justify-content: space-around;
+    }
+
+    .card button:hover {
+        /*opacity: 0.7;*/
+    }
+</style>
+
+<h2>Kết Qủa Tìm Kiếm Danh Sách Sản Phẩm</h2>
+<body>
+    <div class="row">
+        @foreach (var sanPham in Model)
+        {
+            <a href="~/DoUong/Details">
+                <div class="card">
+                    <img src="@sanPham.Img" alt="Hình ảnh sản phẩm" width="100">
+                    <h1>@sanPham.TenDoUong</h1>
+                    <p class="price">@sanPham.GiaTien</p>
+                    <p><button>Thêm vào giỏ hàng</button></p>
+                </div>
+            </a>
+        }
+    </div>
+</body>
+
+
+
+
+
+

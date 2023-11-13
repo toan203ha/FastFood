@@ -22,6 +22,7 @@ namespace CNPM_NC_DoAnNhanh.Models
         [BsonElement("PASS")]
         public string PASS { get; set; }
 
+
     }
 
 }

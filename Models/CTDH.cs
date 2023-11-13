@@ -12,10 +12,15 @@ namespace CNPM_NC_DoAnNhanh.Models
         public string MaDH { get; set; }
         [BsonElement("MaSP")]
         public string MaSP { get; set; }
+        [BsonElement("GiaSP")]
+        public double GiaSP { get; set; }
         [BsonElement("SoLuong")]
         public int SoLuong { get; set; }
         [BsonElement("ThanhTien")]
         public decimal ThanhTien { get; set; }
-        
+        public List<DoUong> DoUong { get; set; }
+        public List<DonHang> DonHang { get; set; }
+
+
     }
 }
