@@ -1,0 +1,190 @@
+﻿ @model List<CNPM_NC_DoAnNhanh.Models.DonHang>
+
+@{
+    ViewBag.Title = "Đơn Hàng";
+    Layout = null;
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+    .order-card {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .order-details {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+        .order-details > div {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .order-details p {
+            margin: 5px 0;
+        }
+
+    .confirm-button {
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 170px;
+        height: 44px;
+    }
+
+    .wait-button {
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        background-color: red;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 170px;
+        height: 44px;
+    }
+
+    .paypal-button {
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background-color: cornflowerblue;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 170px;
+        height: 44px;
+    }
+
+    .none-paypal-button {
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background-color: navy;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 170px;
+        height: 44px;
+    }
+
+    .payment_tm {
+        color: blue;
+    }
+
+    .payment_pp {
+        color: blueviolet;
+    }
+</style>
+
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<div class="container">
+    <h1 style="text-align: center; font-size: 30px; font-weight: bold;">Danh sách đơn hàng đã đặt</h1>
+ 
+   @foreach (var donHang in Model)
+        {
+        
+            <div class="order-card">
+
+                <div class="order-details">
+                    <div>
+                        <p>
+                           
+                            <strong>HTGH:</strong>
+                            @if (!donHang.HinhThucGiaoHang == false)
+                            {
+                                <span>Giao Hàng Trực Tiếp</span>
+                            }
+                            else
+                            {
+                                <span>Giao Hàng Trực Tiếp</span>
+                            }
+                        </p>
+                        <p>
+                            <strong>HTTT:</strong> @if (donHang.HinhThucThanhToan == true)
+                            {
+                                <span class="payment_tm">Thanh Toán Bằng Tiền Mặt</span>
+                                <button class="none-paypal-button">Chưa Thanh Toán</button>
+                            }
+                            else
+                            {
+                                <span class="payment_pp">Thanh Toán Bằng PayPal</span>
+                                <button class="paypal-button">Đã Thanh Toán</button>
+
+                            }
+                        </p>
+                        <p>
+                            <button style="color:green">
+                                <a style="text-decoration:none;" href="~/User/ChiTietDonHang?madh=@donHang._id">Chi tiết đơn hàng</a>
+                            </button>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <strong>TTDH:</strong> @if (donHang.TinhTrangDonHang == false)
+                            {
+                                <span>Đơn Hàng Đang Chờ Duyệt</span>
+                                <button class="wait-button">Chưa xác nhận</button>
+                            }
+                            else
+                            {
+                                <button class="confirm-button">Đã xác nhận</button>
+                                <span>Đơn Hàng đã xác nhận</span>
+                            }
+                        </p>
+                        <p>
+                            <strong>Theo Dõi Đơn Hàng:</strong> @if (donHang.DaGiao == true)
+                            {
+                                <span>Đơn Hàng của bạn đang được giao đến</span>
+                            }
+                            else
+                            {
+                                <span>Đơn Hàng đang chờ nhận</span>
+                            }
+                        </p>
+
+                        <p><strong>Date Order:</strong> @donHang.NgayDatHang.ToString("dd/MM/yyyy HH:mm:ss")</p>
+                        <p><strong>Address Delivery:</strong> @donHang.DiaChiNhan</p>
+                    </div>
+                </div>
+                <div style="margin-left:14px;">
+                    <p><strong>Đơn giá:</strong> @donHang.TongTien VNĐ</p>
+                </div>
+
+            </div>
+            
+        }
+</div>
+   
+
+  
+      

@@ -1,0 +1,87 @@
+﻿@model List<DoUong>
+@{
+    ViewBag.Title = "Index_User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    body {
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 250px;
+        margin: auto;
+        max-width: 250px;
+        background-color: #F8F8FF;
+        text-align: center;
+        font-family: arial;
+        padding: 15px;
+        margin: 0 60px 20px 0;
+        border-radius: 10px;
+    }
+
+        .card:hover {
+            cursor: pointer;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+    .price {
+        color: grey;
+        font-size: 22px;
+    }
+
+    .card button {
+        border: none;
+        outline: 0;
+        padding: 10px;
+        color: white;
+        background-color: orangered;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+        border-radius: 10px;
+    }
+
+    .row {
+        display: flex;
+        padding: 50px;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin: 80px;
+        justify-content: flex-start;
+    }
+
+    .card button:hover {
+        opacity: 0.7;
+    }
+</style>
+
+
+<body>
+    <div style="background-color:#F3F6F6">
+        <div class="row" style="margin-left: 40px;margin-top: 20px;margin-right: 40px;margin-bottom: 0">
+            @foreach (var sanPham in Model)
+            {
+                <div class="card">
+                    <a style="text-decoration:none; color:black;" href="~/Home/ThongTinSP/@sanPham._id">
+
+                        <img src="@sanPham.Img" alt="Hình ảnh sản phẩm" width="200" height="120">
+                        <p style="font-weight:bold; text-align:left;">@sanPham.TenDoUong</p>
+                        <div>
+                            <p class="price" style="text-align:left;color:orange;">@sanPham.GiaTien VNĐ</p>
+
+                        </div>
+                    </a>
+                    <p><button>Thêm vào giỏ hàng</button></p>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+
+
+
+
+
+

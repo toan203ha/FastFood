@@ -1,90 +1,170 @@
 ﻿@model List<CartItem>
 
-@* @if (ViewContext.RouteData.Values.ContainsKey("voucherApplied") && (bool)ViewContext.RouteData.Values["voucherApplied"])
-{
-    <div class="alert alert-success">
-        Mã giảm giá đã được áp dụng.
-    </div>
-} *@
-@if (Model != null && Model.Any())
-{
-    @if (ViewBag.VoucherApplied != null && (bool)ViewBag.VoucherApplied)
-    {
-        <div class="alert alert-success">
-            Mã giảm giá đã được áp dụng.
-        </div>
+<style>
+    /* Hiệu ứng hover chung cho các button và text */
+    .btn, .border-effect {
+        transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+        cursor: pointer;
     }
 
+        .btn:hover, .border-effect:hover {
+            background-color: #3498db;
+            border-color: #3498db;
+            color: #ffffff;
+        }
+
+    /* Hiệu ứng cho nút "Xóa" */
+    .btn-delete {
+        background-color: #e74c3c;
+        border-color: #e74c3c;
+        color: #ffffff;
+    }
+        .btn-delete:hover {
+            background-color: #c0392b;
+            border-color: #c0392b;
+            color: #ffffff;
+        }
+    /* Hiệu ứng cho nút "Đặt Hàng" */
+    .btn-dathang {
+        background-color: #2ecc71;
+        border-color: #2ecc71;
+        color: #ffffff;
+    }
+        .btn-dathang:hover {
+            background-color: #27ae60;
+            border-color: #27ae60;
+            color: #ffffff;
+        }
+    a {
+        text-decoration: none;
+    }
+
+    th, td {
+        max-width: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
+    }
+    button{
+        color:white:
+    }
+    /* Hiệu ứng cho các input number */
+    input[type="number"] {
+        width: 50px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        transition: border-color 0.3s;
+    }
+        input[type="number"]:hover, input[type="number"]:focus {
+            border-color: #3498db;
+        }
+    /* Hiệu ứng cho các alert */
+    .alert {
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .alert-success {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+    }
+</style>
+
+@if (Model != null && Model.Any())
+{
 
 
-
-    <div class="row">
+    <div class="row" style="margin: 40px;margin-left: 160px;">
         <div class="col-md-8">
+            <p style="color:black;">
+                @ViewBag.Quantity
+                @ViewBag.QuantityErr
+            </p>
+
             <h2>Giỏ hàng</h2>
-            <table class="table">
+            <table style="width:90%; border-collapse: collapse; border: 1px solid #ddd;">
                 <thead>
                     <tr>
-                        <th>Sản phẩm</th>
-                        <th>Giá</th>
-                        <th>Số lượng</th>
-                        <th>Tổng tiền</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">Sản phẩm</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">Giá</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">Số lượng</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">Tổng tiền</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">Xóa</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>@item.Ten</td>
-                            <td>@item.Dongia</td>
-                            <td>
+                            <td style="border: 1px solid #ddd; padding: 10px;">@item.Ten</td>
+                            <td style="border: 1px solid #ddd; padding: 10px;">@item.Dongia</td>
+                            <td style="border: 1px solid #ddd; padding: 10px;">
                                 <form asp-controller="GioHang" asp-action="UpdateQuantity" method="post">
                                     <input type="hidden" name="productId" value="@item.MaSP" />
-                                    <input type="number" name="newQuantity" value="@item.Soluong" />
-                                    <button type="submit">Update</button>
+                                    <input type="number" name="newQuantity" value="@item.Soluong" min="1" />
+                                    <button type="submit" class="btn btn-primary border-effect">Cập nhật</button>
                                 </form>
-                            </td> 
-                            <td>Tổng tiền: @(item.Total())</td>
-                            <td>
-                                <div>
-                                    <a asp-controller="GioHang" asp-action="ClearCart" class="btn btn-danger">Clear Cart</a>
-                                </div>
+                            </td>
+                            <td style="border: 1px solid #ddd; padding: 10px;">@(item.Total())</td>
+                            <td style="border: 1px solid #ddd; padding: 10px;">
+                                <button class="btn btn-danger btn-delete">
+                                    <a style="color:white;"  asp-controller="GioHang" asp-action="ClearCart">Xóa toàn bộ giỏ hàng</a>
+                                </button>
                             </td>
                         </tr>
-
                     }
                 </tbody>
             </table>
         </div>
         <div class="col-md-4">
-            <h2>Mã giảm giá</h2>
+ 
             <form asp-controller="GioHang" asp-action="ApplyDiscountCode" method="post">
                 <div class="form-group">
-                    <label for="discountCode">Nhập mã giảm giá:</label>
+                    <label for="discountCode">Nhập Mã Giảm Giá:</label>
                     <input type="text" id="discountCode" name="discountCode" class="form-control" />
+                    <button type="submit" class="btn btn-primary btn-dathang">Áp Dụng Mã Giảm Giá</button>
                 </div>
-                <button type="submit" class="btn btn-primary">Áp dụng mã giảm giá</button>
             </form>
+            <div>
+                @if (TempData.ContainsKey("VoucherApplied"))
+                {
+                    var voucherApplied = (bool)TempData["VoucherApplied"];
+                    if (voucherApplied)
+                    {
+                        <div class="alert alert-success">
+                            Mã giảm giá đã được áp dụng.
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-danger">
+                            Bạn đã áp dụng mã giảm giá cho đơn hàng hoặc mã đã được sữ dụng, không hợp lệ.
+                        </div>
+                    }
+                }
+            </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="col-md-8">
+                <p class="text-right"><strong>Tổng Tiền: @Model.Sum(item => item.Dongia * item.Soluong) | Tổng Số Lượng: @Model.Sum(item => item.Soluong)</strong></p>
+           
+            </div>
+          
+        </div>
 
-    <div class="row">
-        <div class="col-md-8">
-            <p class="text-right"><strong>Tổng tiền: @Model.Sum(item => item.Dongia * item.Soluong)</strong></p>
-        </div>
-        <div class="col-md-8">
-            <p class="text-right"><strong>Tổng số lượng: @Model.Sum(item => item.Soluong)</strong></p>
+        <div class="row">
+            <div class="col-md-12">
+                <button   class="btn btn-primary btn-dathang">
+                    <a style="color:white;" asp-controller="GioHang" asp-action="DatHang" >Đặt Hàng</a>
+                </button>
+            </div>
         </div>
     </div>
-    <tr style="font-weight:bold; text-align:center;">
-        <td colspan="9">
-            @Html.ActionLink("ĐẶT HÀNG", "DatHang", null, new
-        {
-        @class = "btn btn-primary"
-        })
-        </td>
-    </tr>
 }
 else
 {
-    <p>Your cart is empty.</p>
+    <h1 style="text-align:center; margin-top:50px">Giỏ Hàng Của Bạn Đang Trống.</h1>
 }

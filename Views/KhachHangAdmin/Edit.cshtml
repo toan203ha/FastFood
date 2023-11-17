@@ -1,0 +1,95 @@
+﻿@model KhachHang
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Admin/Layout/_LayoutAdmin.cshtml";
+}
+
+<style>
+    body {
+        background-image: url('	https://shopeefood.vn/app/assets/img/main-banner.jpg?45bff8c9ec408a5ba51f9fdef662324e');
+        color: white;
+        text-align: center;
+    }
+
+    .edit-pro {
+        padding-top: 50px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .form-group {
+        padding-bottom: 10px;
+        font-family: math;
+        font-size: 25px;
+    }
+
+    .btn-primary {
+        background-color: orangered;
+        color: white;
+        font-size: 20px;
+        border-radius: 5px;
+        border: none;
+        padding: 5px;
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-top: 25px;
+    }
+
+    .back {
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 15px;
+    }
+
+    .title {
+        font-family: math;
+        font-size: 30px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="title">
+        <h1>Edit khách hàng</h1>
+    </div>
+    <div class="edit-pro">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="_id" />
+            <div class="form-group">
+                <a>Họ và tên khách hàng</a>
+                <input asp-for="HoTenKH" class="form-control" style="margin-left: 25px; font-size: 20px" />
+                <span asp-validation-for="HoTenKH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <a>Số điện thoại</a>
+                <input asp-for="SDT" action="form-control" style="margin-left: 25px; font-size: 20px" />
+                <span asp-validation-for="SDT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <a>Địa chỉ</a>
+                <input asp-for="DiaChi" class="form-control" style="margin-left: 75px; font-size: 20px" />
+                <span asp-validation-for="DiaChi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <a>Ví</a>
+                <input asp-for="Vi" class="form-control" style="margin-left: 75px; font-size: 20px" />
+                <span asp-validation-for="Vi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <a>Tài khoản</a>
+                <input asp-for="TK" class="form-control" style="margin-left: 75px; font-size: 20px" />
+                <span asp-validation-for="TK" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <a>Mật khẩu</a>
+                <input asp-for="PASS" class="form-control" style="margin-left: 75px; font-size: 20px" />
+                <span asp-validation-for="PASS" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Lưu</button>
+            <div class="back">
+                <a asp-action="Index" style="color:white;">Back to List</a>
+            </div>
+        </form>
+    </div>
+</body>

@@ -41,6 +41,7 @@ namespace CNPM_NC_DoAnNhanh.Controllers
 
             var danhSachDoUong = doUongCollection.Find(_ => true).ToList();
             var danhSachLoaiSanPham = phanLoaiCollection.Find(_ => true).ToList();
+            // lay bằng tên
             foreach (var doUong in danhSachDoUong)
             {
                 var loaiSanPham = danhSachLoaiSanPham.FirstOrDefault(l => l._id == doUong.LoaiSanPham);
@@ -49,7 +50,6 @@ namespace CNPM_NC_DoAnNhanh.Controllers
                     doUong.LoaiSanPham = loaiSanPham.TenLoai;
                 }
             }
-
             return View(danhSachDoUong);
         }
 

@@ -77,6 +77,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<VoucherRepository>();
+//paypal
 
 
 // Khởi tạo kết nối đến MongoDB
@@ -88,13 +89,14 @@ var database = client.GetDatabase(databaseName);
 // Đăng ký đối tượng IMongoDatabase vào DI container
 builder.Services.AddSingleton<IMongoDatabase>(database);
 builder.Services.AddDistributedMemoryCache();
+ 
 
 
 builder.Services.AddMemoryCache();
 
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromSeconds(10);
+    options.IdleTimeout = TimeSpan.FromMinutes(10);
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
@@ -114,5 +116,5 @@ app.UseAuthorization();
 app.UseSession();
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Default}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 app.Run();

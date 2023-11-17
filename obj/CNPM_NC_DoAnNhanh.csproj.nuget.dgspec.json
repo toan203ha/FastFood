@@ -63,6 +63,10 @@
               "target": "Package",
               "version": "[2.22.0, )"
             },
+            "PayPal": {
+              "target": "Package",
+              "version": "[1.9.1, )"
+            },
             "boost": {
               "target": "Package",
               "version": "[1.83.0, )"

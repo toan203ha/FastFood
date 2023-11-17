@@ -1,0 +1,119 @@
+﻿@model List<CNPM_NC_DoAnNhanh.Models.DonHang>
+
+@{
+    ViewBag.Title = "Đơn Hàng";
+    Layout = "~/Admin/Layout/_LayoutAdmin.cshtml";
+}
+
+<style>
+    html,
+    body,
+    .intro {
+        height: 100%;
+    }
+
+    table td,
+    table th {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+       color:black;
+    }
+
+    .card {
+        border-radius: .5rem;
+    }
+
+    .mask-custom {
+        background: rgba(24, 24, 16, .2);
+        border-radius: 2em;
+        backdrop-filter: blur(25px);
+        border: 2px solid rgba(255, 255, 255, 0.05);
+        background-clip: padding-box;
+        box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+    }
+</style>
+
+
+<section class="intro">
+    <div class="bg-image h-100" style="background-color: #6095F0;">
+        <div class="mask d-flex align-items-center h-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="card shadow-2-strong" style="background-color: #f5f7fa;">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-borderless mb-0">
+                                        <thead>
+                                            <tr>                            
+                                                <th>Ngày Đặt Hàng</th>
+                                                <th>Tình Trạng Đơn Hàng</th>
+                                                <th>Ngày Giao Hàng</th>
+                                                <th>Tên Người Nhận</th>
+                                                <th>Địa Chỉ Nhận</th>
+                                                <th>Hình Thức Thanh Toán</th>                                                
+                                                <th>Tổng Tiền</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                @foreach (var donHang in Model)
+                                                {                                                    
+                                                <tr>
+                                                    <td>@donHang.NgayDatHang</td>                                         
+                                                    <td>
+                                                            @{
+                                                                if (donHang.TinhTrangDonHang == true)
+                                                                {
+                                                                <p>
+                                                                    <button> @Html.ActionLink("Hủy Đơn Hàng", "Xacnhan", new { id = donHang._id }) </button>
+                                                                </p>
+                                                                }
+                                                                else if (@donHang.TinhTrangDonHang == false)
+                                                                {
+                                                                <p>
+                                                                    <button> @Html.ActionLink("Xác nhận đơn hàng", "Xacnhan", new { id = donHang._id }) </button>
+                                                                </p>
+                                                                }
+                                                            }
+                                                    </td>
+                                                    <td>@donHang.NgayGiaoHang</td>
+                                                    <td>@donHang.DaGiao</td>
+                                                        @{
+                                                            if (@donHang.DaGiao == true)
+                                                            {
+                                                            <div style="color:red">Shiper đã nhận đơn hàng của bạn</div>
+                                                            }
+                                                            else if (@donHang.DaGiao == false)
+                                                            {
+                                                            <div style="color:brown">Đơn hàng của bạn đang trong hàng chờ</div>
+                                                            }
+                                                        }
+                                 
+                                                    <td>@donHang.DiaChiNhan</td>                                                 
+                                                        @{
+                                                            if (@donHang.HinhThucThanhToan == false)
+                                                            {
+                                                            <div style="color:red">Thanh toán chuyển khoản</div>
+                                                            }
+                                                            else if (@donHang.HinhThucThanhToan == true)
+                                                            {
+                                                            <div style="color:brown">Thanh toán tiền mặt</div>
+                                                            }
+                                                        }                                                 
+                                                    <td>@donHang.TongTien</td>
+                                                </tr>
+                                                }
+                                            </tr>                                          
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

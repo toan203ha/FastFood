@@ -1,0 +1,90 @@
+﻿@model List<KhachHang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Admin/Layout/_LayoutAdmin.cshtml";
+}
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<p>
+    @HttpContextAccessor.HttpContext.Session.GetString("UserID")
+    @HttpContextAccessor.HttpContext.Session.GetString("UserName")
+</p>
+<style>
+    .form-control {
+        font-size: 20px;
+        border-radius: 2px;
+        border: none;
+        margin-left: 30px;
+        text-align: center;
+        font-family: math;
+    }
+
+    td {
+        padding: 5px;
+    }
+
+    th {
+        padding: 10px;
+        font-family: math;
+    }
+
+    .add-pro {
+        padding: 10px;
+        font-size: 15px;
+        text-align: center;
+        background-color: orangered;
+        border-radius: 3px;
+    }
+</style>
+<body>
+    <form asp-controller="KhachHangAdmin" asp-action="Index" method="get">
+        <div>
+            <label for="keyword">Tìm Kiếm:</label>
+            <input type="text" id="keyword" name="keyword" value="@ViewBag.Keyword" style="border: none; outline: none; padding: 5px; width: 150px;" />
+        </div>
+
+        <div>
+            <button type="submit">
+                <i class="fas fa-search"></i> Tìm kiếm
+            </button>
+        </div>
+    </form>
+    <table class="table" style="padding-left: 100px">
+        <thead>
+            <tr style="padding: 10px">
+                <th>Họ và tên </th>
+                <th>Số điện thoại</th>
+                <th>Địa chỉ</th>
+                <th>Ví</th>
+                <th>Tài khoản</th>
+                <th>Mật khẩu</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var document in Model)
+            {
+                <tr>
+                    <td>@document.HoTenKH</td>
+                    <td>@document.SDT</td>
+                    <td>@document.DiaChi</td>
+                    <td>@document.Vi</td>
+                    <td>@document.TK</td>
+                    <td>@document.PASS</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@document._id" style="color:orangered;">Sửa</a> |
+                        <a asp-action="Delete" asp-route-id="@document._id" style="color:orangered;">Xóa</a> |
+                        <a asp-action="Details" asp-route-id="@document._id" style="color:orangered;"> Chi tiết</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div style="text-align: center; padding: 10px;">
+        <a href="~/KhachHangAdmin/Create">
+            <button class="add-pro">Thêm khách hàng</button>
+        </a>
+    </div>
+
+</body>
