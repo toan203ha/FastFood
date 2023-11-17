@@ -1,5 +1,6 @@
 ﻿using CNPM_NC_DoAnNhanh.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using MongoDB.Driver;
 using System;
 
@@ -43,10 +44,41 @@ namespace CNPM_NC_DoAnNhanh.Controllers
             return View(danhsachCTDH);
         }
         // GET: User
-        public ActionResult Info()
+        [HttpGet]
+        public IActionResult Info(string id)
         {
-            return View();
+            var collection = _database.GetCollection<KhachHang>("KhachHang");
+            var user = collection.Find(x => x._id == id).FirstOrDefault();
+            return View(user);
         }
+
+        [HttpPost]
+        public IActionResult Info(KhachHang kh)
+        {
+            if (ModelState.IsValid)
+            {
+                var collection = _database.GetCollection<KhachHang>("KhachHang");
+                var filter = Builders<KhachHang>.Filter.Eq("_id", kh._id);
+                var update = Builders<KhachHang>.Update
+                    .Set("HoTenKH", kh.HoTenKH)
+                    .Set("SDT", kh.SDT)
+                    .Set("DiaChi", kh.DiaChi);
+                var result = collection.UpdateOne(filter, update);
+                if (result.IsAcknowledged && result.ModifiedCount > 0)
+                {
+                    return RedirectToAction("Info");
+                }
+                else
+                {
+
+                }
+            }
+            return View(kh);
+        }
+
+
+
+
         public ActionResult ViewKhuyenmai()
         {
             return View();

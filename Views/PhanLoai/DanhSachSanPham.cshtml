@@ -3,21 +3,22 @@
     ViewBag.Title = "Index_User";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script src="https://kit.fontawesome.com/c0b1a641d5.js" crossorigin="anonymous"></script>
+
 <style>
     body {
-         
+        background-image: url('	https://shopeefood.vn/app/assets/img/main-banner.jpg?45bff8c9ec408a5ba51f9fdef662324e');
     }
-
     .card {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         max-width: 250px;
         margin: auto;
-        max-width: 250px;
+        max-width: 200px;
         background-color: #F8F8FF;
         text-align: center;
         font-family: arial;
-        padding: 15px;
-        margin: 0 60px 20px 0;
+        padding: 30px;
+        margin: 0 20px 20px 0;
         border-radius: 10px;
     }
 
@@ -34,7 +35,7 @@
     .card button {
         border: none;
         outline: 0;
-        padding: 10px;
+        padding: 12px;
         color: white;
         background-color: orangered;
         text-align: center;
@@ -42,62 +43,88 @@
         width: 100%;
         font-size: 18px;
         border-radius: 10px;
+        font-size:20px;
     }
 
     .row {
+        width: 1450px;
         display: flex;
+        padding: 50px;
         flex-wrap: wrap;
         flex-direction: row;
         margin: 80px;
         justify-content: flex-start;
-        padding-top: 50px;
-        padding-left: 50px;
-        padding-bottom: 50px;
     }
 
     .card button:hover {
-        opacity: 0.7;
+        /*opacity: 0.7;*/
     }
-    .row{
-        margin-left: 150px;
-        margin-top: 20px;
-        margin-right: 159px;
-        background-color: lavender;
-    }
-</style>
 
- 
+    :root {
+        --color-primary: #fc5c65;
+        --color-secondary: #fd9644;
+        --color-tertiary: #fed330;
+        --color-quaternary: #26de81;
+        --color-quinary: #2bcbba;
+        --color-sixth: #eb3b5a;
+        --color-seventh: #fa8231;
+        --color-eighth: #20bf6b;
+        --color-ninth: #45aaf2;
+    }
+
+     .radiant-form {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-left: 985px;
+    }
+
+     
+    .radiant-select {
+        background-color: var(--color-seventh);
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+        font-size: 16px;
+    }
+        .radiant-select:hover {
+            background-color: var(--color-seventh);
+            cursor: pointer;
+        }
+</style>
 <body>
-    <div style="background-color:#F3F6F6">
-        <div class="row" >
-        @foreach (var sanPham in Model)
-        {
-            <div class="card">
-                <a style="text-decoration:none; color:black;" href="~/Home/ThongTinSP/@sanPham._id">
-                    <img src="@sanPham.Img" alt="Hình ảnh sản phẩm" width="200" height="120">
-                    <p style="font-weight:bold; text-align:left;">@sanPham.TenDoUong</p>
-                    <div>
-                        <p class="price" style="text-align:left;color:orange;">@sanPham.GiaTien VNĐ</p>
-                    </div>
-                </a>
-                <p><button>Thêm vào giỏ hàng</button></p>
-            </div>
+    <div style="margin-right: 150px;margin-right:60px;margin-top:60px;">
+        <div style="text-align: right; font-size: 16px;margin-right: 100px;  font-weight: bold">
+            <form class="radiant-form" asp-controller="PhanLoai" asp-action="DanhSachSanPhamTheoDanhMuc" method="get">
+                <input type="hidden" name="id" value="@ViewBag.Id" />
+                <label>Sắp xếp theo:</label>
+                <select name="sortBy" class="radiant-select">
+                    <option value="name">Tên Tăng dần</option>
+                    <option value="name_desc">Tên Giảm dần</option>
+                    <option value="price">Giá Tăng dần</option>
+                    <option value="price_desc">Giá Giảm dần</option>
+                </select>
+                 <input type="submit" value="Sắp xếp" />
+            </form>
+        </div>
+    </div>
+    <div class="row">
+            @foreach (var sanPham in Model)
+            {
                 <div class="card">
                     <a style="text-decoration:none; color:black;" href="~/Home/ThongTinSP/@sanPham._id">
-
-                        <img src="@sanPham.Img" alt="Hình ảnh sản phẩm" width="200" height="120">
-                        <p style="font-weight:bold; text-align:left;">@sanPham.TenDoUong</p>
-                        <div>
-                            <p class="price" style="text-align:left;color:orange;">@sanPham.GiaTien VNĐ</p>
-                        </div>
+                    <img src="data:image/jpeg;base64,@sanPham.Img" alt="Hình ảnh sản phẩm" width="100">
+                    <h1 style="font-size: 17px;">@sanPham.TenDoUong</h1>
+                        <p class="price">@sanPham.GiaTien</p>
+                        <p><button>Thêm vào giỏ hàng</button></p>
                     </a>
-                    <p><button>Thêm vào giỏ hàng</button></p>
                 </div>
-        }
+            }
         </div>
     </div>
 </body>
-
 
 
 

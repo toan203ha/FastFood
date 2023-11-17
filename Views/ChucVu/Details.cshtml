@@ -1,0 +1,61 @@
+﻿@model CNPM_NC_DoAnNhanh.Models.ChucVu
+@{
+    ViewBag.Title = "Chi Tiết Chức Vụ";
+    Layout = "~/Admin/Layout/_LayoutAdmin.cshtml";
+}
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;  
+    }
+
+    h2 {
+        color: #007bff;  
+    }
+
+    .container {
+        background-color: #fff;  
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h4 {
+        color: #343a40;  
+    }
+
+    .btn-edit {
+        background-color: #ffc107;  
+        color: #212529;  
+        padding: 6px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn-back {
+        background-color: #6c757d;  
+        color: #fff;
+        padding: 6px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        margin-left: 10px;
+    }
+</style>
+
+<div class="container mt-4">
+    <h2 class="text-center">Chi Tiết Chức Vụ</h2>
+    <div>
+        <h4>Tên Chức Vụ: @Model.TenCV</h4>
+        <p>
+            <a asp-action="Edit" asp-route-id="@Model._id" class="btn btn-edit">Chỉnh Sửa</a>
+            <a asp-action="Index" class="btn btn-back">Quay Lại</a>
+        </p>
+    </div>
+</div>
+

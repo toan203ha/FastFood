@@ -63,7 +63,7 @@
 <div style="width: 100%; background-color: white;">
     <div class="main_shop">
         <div class="header_shop">
-            <img class="img_shop" style="object-fit: cover; width:45%;" src="@Model.Img" />
+            <img class="img_shop" style="object-fit: cover; width:45%;" src="data:image/jpeg;base64,@Model.Img" />
             <div class="header_detail">
                 <p style="color: cadetblue;"> @GetTenLoaiSanPham(Model.LoaiSanPham) -> @Model.TenDoUong</p>
                 <strong style="font-size: 50px; margin-bottom: 5px;"> @Model.TenDoUong </strong>
@@ -96,8 +96,7 @@
     </div>
 </div>
 
-       
-            
+           
 @inject IMongoDatabase _database
 @functions {
     // Define the GetTenLoaiSanPham method in the view

@@ -1,0 +1,65 @@
+﻿@model CNPM_NC_DoAnNhanh.Models.NhanVien
+
+@{
+    ViewBag.Title = "Thông Tin Nhân Viên";
+    Layout = "~/Admin/Layout/_LayoutAdmin.cshtml";
+}
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    .container {
+        margin-top: 20px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        color: #007bff;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    h4 {
+        color: #343a40;
+    }
+
+    .btn-edit,
+    .btn-back {
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .btn-edit {
+        background-color: #ffc107;
+        color: #212529;
+    }
+
+    .btn-back {
+        background-color: #6c757d;
+        color: #fff;
+    }
+</style>
+
+<div class="container">
+    <h2>Chi Tiết Chức Vụ</h2>
+    <div>
+        <h4>Tên Nhân Viên: @Model.TenNV</h4>
+        <h4>Chức Vụ: @Model.MaCV</h4>
+        <h4>Tài Khoản: @Model.TK</h4>
+        <h4>Mật Khẩu: @Model.PASS</h4>
+        <p>
+            <a asp-action="Edit" asp-route-id="@Model._id" class="btn btn-edit">Chỉnh Sửa</a>
+            <a asp-action="Index" class="btn btn-back">Quay Lại</a>
+        </p>
+    </div>
+</div>

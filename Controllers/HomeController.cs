@@ -1,5 +1,6 @@
 ﻿using CNPM_NC_DoAnNhanh.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using MongoDB.Driver;
 using System.Diagnostics;
 
@@ -30,53 +31,44 @@ namespace CNPM_NC_DoAnNhanh.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-
-        public ActionResult details()
-        {
-            return View();
-        }
         // trang chu
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(string keyword, string loaiSanPham)
         {
             var doUongCollection = _database.GetCollection<DoUong>("DoUong");
             var phanLoaiCollection = _database.GetCollection<PhanLoai>("PhanLoai");
 
-            var danhSachDoUong = doUongCollection.Find(_ => true).ToList();
+            // Tìm danh mục theo tên
+            var danhMuc = phanLoaiCollection.Find(x => x.TenLoai == loaiSanPham).FirstOrDefault();
+            var keywordFilter = Builders<DoUong>.Filter.Empty;
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                keywordFilter = Builders<DoUong>.Filter.Where(u => u.TenDoUong.ToLower().Contains(keyword));
+
+            }
+
+            // Tạo bộ lọc cho loại sản phẩm
+            var loaiSanPhamFilter = Builders<DoUong>.Filter.Empty;
+            if (danhMuc != null)
+            {
+                loaiSanPhamFilter = Builders<DoUong>.Filter.Eq("LoaiSanPham", danhMuc._id);
+            }
+
+            // Kết hợp cả hai bộ lọc
+            var combinedFilter = Builders<DoUong>.Filter.And(keywordFilter, loaiSanPhamFilter);
+            var danhSachDoUong = doUongCollection.Find(combinedFilter).ToList();
             var danhSachLoaiSanPham = phanLoaiCollection.Find(_ => true).ToList();
-            // lay bằng tên
+            ViewBag.LoaiSanPhamList = new SelectList(danhSachLoaiSanPham, "_id", "TenLoai");
             foreach (var doUong in danhSachDoUong)
             {
-                var loaiSanPham = danhSachLoaiSanPham.FirstOrDefault(l => l._id == doUong.LoaiSanPham);
-                if (loaiSanPham != null)
+                var loaiSanPham_ = danhSachLoaiSanPham.FirstOrDefault(l => l._id == doUong.LoaiSanPham);
+                if (loaiSanPham_ != null)
                 {
-                    doUong.LoaiSanPham = loaiSanPham.TenLoai;
+                    doUong.LoaiSanPham = loaiSanPham_.TenLoai;
                 }
             }
             return View(danhSachDoUong);
-        }
-        //tìm kiếm
-        public List<DoUong> SearchUsers(IMongoCollection<DoUong> collection, string keyword)
-        {
-            var filter = Builders<DoUong>.Filter.Where(u => u.TenDoUong.ToLower().Contains(keyword));
-            return collection.Find(filter).ToList();
-        }
-
-        [HttpGet]
-        public IActionResult Search(string keyword)
-        {
-            var collection = _database.GetCollection<DoUong>("DoUong");
-            var users = SearchUsers(collection, keyword);
-            if (users == null)
-            {
-
-            }
-            return PartialView(users);
-        }
-
-        
-        
+        }   
         //Thong Tin San Pham
         public IActionResult ThongTinSP(string id)
         {

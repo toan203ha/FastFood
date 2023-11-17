@@ -1317,3 +1317,7 @@ D:\CNPM_NC\Thư mục mới\FastFood_Web - Copy\obj\Debug\net6.0\CNPM_NC_DoAnNh
 D:\CNPM_NC\Thư mục mới\FastFood_Web - Copy\obj\Debug\net6.0\CNPM_NC_DoAnNhanh.genruntimeconfig.cache
 D:\CNPM_NC\Thư mục mới\FastFood_Web - Copy\obj\Debug\net6.0\ref\CNPM_NC_DoAnNhanh.dll
 D:\CNPM_NC\Thư mục mới\FastFood_Web - Copy\bin\Debug\net6.0\PayPal.dll
+D:\CNPM_NC\Thư mục mới\FastFood_Web - Copy\bin\Debug\net6.0\JetBrains.Annotations.dll
+D:\CNPM_NC\Thư mục mới\FastFood_Web - Copy\bin\Debug\net6.0\X.PagedList.dll
+D:\CNPM_NC\Thư mục mới\FastFood_Web - Copy\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
+D:\CNPM_NC\Thư mục mới\FastFood_Web - Copy\obj\Debug\net6.0\CNPM_NC_DoAnNhanh.MvcApplicationPartsAssemblyInfo.cs

@@ -872,6 +872,19 @@
           }
         }
       },
+      "JetBrains.Annotations/2022.3.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/JetBrains.Annotations.dll": {
+            "related": ".deps.json;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/JetBrains.Annotations.dll": {
+            "related": ".deps.json;.xml"
+          }
+        }
+      },
       "MessagePack/2.1.152": {
         "type": "package",
         "dependencies": {
@@ -4124,6 +4137,33 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "X.PagedList/8.4.7": {
+        "type": "package",
+        "dependencies": {
+          "JetBrains.Annotations": "2022.3.1"
+        },
+        "compile": {
+          "lib/net6.0/X.PagedList.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/X.PagedList.dll": {}
+        }
+      },
+      "X.PagedList.Mvc.Core/8.4.7": {
+        "type": "package",
+        "dependencies": {
+          "X.PagedList": "8.4.7"
+        },
+        "compile": {
+          "lib/net6.0/X.PagedList.Mvc.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/X.PagedList.Mvc.Core.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "ZstdSharp.Port/0.6.2": {
         "type": "package",
@@ -20744,6 +20784,28 @@
         "logo.png"
       ]
     },
+    "JetBrains.Annotations/2022.3.1": {
+      "sha512": "11nsS3+lFICGkztVs9PP2NRItxf9fF+qD6xEW/T0YGto52zj07wseUeBdMAU1ah9HNVTDZyRC1u4NWdtJScwhw==",
+      "type": "package",
+      "path": "jetbrains.annotations/2022.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "jetbrains.annotations.2022.3.1.nupkg.sha512",
+        "jetbrains.annotations.nuspec",
+        "lib/net20/JetBrains.Annotations.dll",
+        "lib/net20/JetBrains.Annotations.xml",
+        "lib/netstandard1.0/JetBrains.Annotations.deps.json",
+        "lib/netstandard1.0/JetBrains.Annotations.dll",
+        "lib/netstandard1.0/JetBrains.Annotations.xml",
+        "lib/netstandard2.0/JetBrains.Annotations.deps.json",
+        "lib/netstandard2.0/JetBrains.Annotations.dll",
+        "lib/netstandard2.0/JetBrains.Annotations.xml",
+        "lib/portable40-net40+sl5+win8+wp8+wpa81/JetBrains.Annotations.dll",
+        "lib/portable40-net40+sl5+win8+wp8+wpa81/JetBrains.Annotations.xml"
+      ]
+    },
     "MessagePack/2.1.152": {
       "sha512": "PlJ31qf42uGuJfwc61x/Pt4hJi01xh1rrBofj1MJSLzEot/2UAIRdSgxEHN/8qou5CV8OBeDM9HXKPi1Oj8rpQ==",
       "type": "package",
@@ -27098,6 +27160,34 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "X.PagedList/8.4.7": {
+      "sha512": "ZA1WcyNviMUhivCgwKAm/5/YsNP3Yf/n81SzrPaHSJOcFzavA9MrXTT8M+ZX4fvHwLCL1bY6BPXvwZF5pRtgTg==",
+      "type": "package",
+      "path": "x.pagedlist/8.4.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/X.PagedList.dll",
+        "lib/net7.0/X.PagedList.dll",
+        "lib/netstandard2.0/X.PagedList.dll",
+        "lib/netstandard2.1/X.PagedList.dll",
+        "x.pagedlist.8.4.7.nupkg.sha512",
+        "x.pagedlist.nuspec"
+      ]
+    },
+    "X.PagedList.Mvc.Core/8.4.7": {
+      "sha512": "dS8sJr/aT3AoV9ePaqmF4wijh/2vqS9rxpOvzjPPStkQcR8rUaGPVezPgY/kJwWCZ2hdgKNralbU08So0otNxw==",
+      "type": "package",
+      "path": "x.pagedlist.mvc.core/8.4.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/X.PagedList.Mvc.Core.dll",
+        "lib/net7.0/X.PagedList.Mvc.Core.dll",
+        "x.pagedlist.mvc.core.8.4.7.nupkg.sha512",
+        "x.pagedlist.mvc.core.nuspec"
+      ]
+    },
     "ZstdSharp.Port/0.6.2": {
       "sha512": "jPao/LdUNLUz8rn3H1D8W7wQbZsRZM0iayvWI4xGejJg3XJHT56gcmYdgmCGPdJF1UEBqUjucCRrFB+4HbJsbw==",
       "type": "package",
@@ -27123,6 +27213,7 @@
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16",
       "MongoDB.Driver >= 2.22.0",
       "PayPal >= 1.9.1",
+      "X.PagedList.Mvc.Core >= 8.4.7",
       "boost >= 1.83.0",
       "bootstrap >= 5.3.2"
     ]
@@ -27193,6 +27284,10 @@
           "PayPal": {
             "target": "Package",
             "version": "[1.9.1, )"
+          },
+          "X.PagedList.Mvc.Core": {
+            "target": "Package",
+            "version": "[8.4.7, )"
           },
           "boost": {
             "target": "Package",

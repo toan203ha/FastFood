@@ -20,6 +20,22 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QWRtaW5cTGF5b3V0XF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/CNPM_NC/Thư mục mới/FastFood_Web - Copy/Views/ChucVu/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2h1Y1Z1XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CNPM_NC/Thư mục mới/FastFood_Web - Copy/Views/ChucVu/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2h1Y1Z1XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CNPM_NC/Thư mục mới/FastFood_Web - Copy/Views/ChucVu/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2h1Y1Z1XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CNPM_NC/Thư mục mới/FastFood_Web - Copy/Views/ChucVu/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2h1Y1Z1XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/CNPM_NC/Thư mục mới/FastFood_Web - Copy/Views/Default/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -50,6 +66,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/CNPM_NC/Thư mục mới/FastFood_Web - Copy/Views/DoUong/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9Vb25nXFNlYXJjaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CNPM_NC/Thư mục mới/FastFood_Web - Copy/Views/DoUong/upimage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9Vb25nXHVwaW1hZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/CNPM_NC/Thư mục mới/FastFood_Web - Copy/Views/GioHang/DatHang.cshtml]
@@ -112,6 +132,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUmVnaXN0ZXJVc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/CNPM_NC/Thư mục mới/FastFood_Web - Copy/Views/NhanVien/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhblZpZW5cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CNPM_NC/Thư mục mới/FastFood_Web - Copy/Views/NhanVien/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhblZpZW5cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CNPM_NC/Thư mục mới/FastFood_Web - Copy/Views/NhanVien/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhblZpZW5cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CNPM_NC/Thư mục mới/FastFood_Web - Copy/Views/NhanVien/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhblZpZW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/CNPM_NC/Thư mục mới/FastFood_Web - Copy/Views/PhanLoai/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhhbkxvYWlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -146,6 +182,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/CNPM_NC/Thư mục mới/FastFood_Web - Copy/Views/Shared/_ViewProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WaWV3UHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CNPM_NC/Thư mục mới/FastFood_Web - Copy/Views/ThongKe/BieuDo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhvbmdLZVxCaWV1RG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CNPM_NC/Thư mục mới/FastFood_Web - Copy/Views/ThongKe/ThongKeTopKhachHangVaBieuDo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhvbmdLZVxUaG9uZ0tlVG9wS2hhY2hIYW5nVmFCaWV1RG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CNPM_NC/Thư mục mới/FastFood_Web - Copy/Views/ThongKe/TopKhachHangMuaNhieuNhat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhvbmdLZVxUb3BLaGFjaEhhbmdNdWFOaGlldU5oYXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/CNPM_NC/Thư mục mới/FastFood_Web - Copy/Views/User/ChiTietDonHang.cshtml]

@@ -1,8 +1,124 @@
-﻿
-@{
-    ViewData["Title"] = "Info";
-    Layout = "~/Views/Shared/_ViewProduct.cshtml";
-}
+﻿@model CNPM_NC_DoAnNhanh.Models.KhachHang
 
-<h1>Info</h1>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Thông Tin Người Dùng</title>
+        <style>
+            body {
+                background-color: #f5f5f5;
+            }
+
+            .container {
+                display: grid;
+                grid-template-columns: 1fr;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                padding: 20px;
+            }
+
+            .card {
+                max-width: 500px;
+                margin: 0 auto;
+                border-radius: 5px;
+                box-shadow: 0 0 7px rgba(0, 0, 0, 0.7);
+                background-color: white;
+                padding: 20px;
+            }
+
+            .card__image {
+                width: 160px;
+                height: 160px;
+                border-radius: 50%;
+                border: 5px solid #5a5a5b;
+                margin: 0 auto 20px;
+                margin-left: 150px;
+            }
+
+            .card__name {
+                text-align: center;
+                font-size: 1.5em;
+                font-weight: bold;
+                color: black;
+                margin: 0;
+                margin-bottom: 20px;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            label {
+                margin-left: 55px;
+            }
+
+            .name-p {
+                float: right;
+                margin-right: 50px;
+            }
+
+            .btn {
+                background-color: #f9f9f9;
+                border: none;
+                color: #000;
+                cursor: pointer;
+                line-height: 1.5;
+                font: 700 1.0rem 'Roboto Slab', sans-serif;
+                padding: 0.75em 2em;
+                letter-spacing: 0.05rem;
+                width: 100%;
+            }
+
+                .btn:focus {
+                    outline: 2px dotted #00f7ff;
+                }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model._id)
+                @Html.HiddenFor(model => model.TK, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.HiddenFor(model => model.PASS, new { htmlAttributes = new { @class = "form-control" } })
+   
+
+                <div class="card">
+                    <img src="https://lh3.googleusercontent.com/ytP9VP86DItizVX2YNA-xTYzV09IS7rh4WexVp7eilIcfHmm74B7odbcwD5DTXmL0PF42i2wnRKSFPBHlmSjCblWHDCD2oD1oaM1CGFcSd48VBKJfsCi4bS170PKxGwji8CPmehwPw=w200-h247-no" alt="Person" class="card__image">
+                    <p class="card__name">Thông tin chi tiết người dùng</p>
+                    <div class="form-group">
+                        <label for="TenKH">Tên người dùng:</label>
+                        <div class="name-p">
+                            @Html.EditorFor(model => model.HoTenKH, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.HoTenKH, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="sdt">Số điện thoại:</label>
+                        <div class="name-p">
+                            @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="DiaChi">Địa chỉ:</label>
+                        <div class="name-p">
+                            @Html.EditorFor(model => model.DiaChi, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.DiaChi, "", new { @class = "text-danger" })
+                        </div>
+                    </div>                  
+                    <button class="btn draw-border">Lưu Thông Tin</button>
+                </div>
+            }
+        </div>
+    </body>
+    </html>
 

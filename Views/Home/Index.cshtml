@@ -118,25 +118,46 @@
     ::-webkit-scrollbar {
         width: 0;
     }
+
+
+    form {
+        display: flex;
+        flex-direction: row;
+        align-items: center; 
+        margin-left: 120px
+    }
+
+        form > div {
+            padding: 5px; 
+            border-radius: 5px;  
+            display: flex;
+            align-items: center;
+        }
+
+    button[type="submit"] {
+        background-color: orangered;
+        color: #fff;
+        border: none;
+        padding: 13px 12px;
+        cursor: pointer;
+        border-radius: 7px;
+    }
 </style>
 <main>
     <div class="main_body">
         <div class="body_left">
             <p style="font-size: 30px; color: white; text-align:left; padding-left:120px">Đặt Đồ ăn, giao hàng từ 20'</p>
-            <form id="search-form" method="get" asp-action="Search">
-                <div class="form-group" style="margin-bottom:20px">
-                    <label for="keyword" style="font-size:25px; padding-left:100px; font-family:math;">Tìm sản phẩm:</label>
-                    <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Tìm kiếm..." />
+            <form asp-action="Index" method="get">
+                <div>
+                    <input type="text" id="keyword" placeholder="Nhập Tên Món ĂN..." name="keyword" value="@ViewBag.Keyword" style="border: none; outline: none;  padding: 5px; width: 350px; height: 30px;border-radius: 5px;">
+                </div>
+                <div>
+                    <button type="submit">
+                        <i class="fas fa-search"></i> Tìm kiếm
+                    </button>
                 </div>
             </form>
-            <div class="nav_select">
-                <ul class="ul_options">
-                    <li>All</li>
-                    <li>Đồ Ăn</li>
-                    <li>Đồ Uống</li>
-                    <li>Combo Đặt Biệt</li>           
-                </ul>
-            </div>
+  
         </div>
         <div class="body_right">
             <div class="div_BestSeller">
@@ -145,11 +166,9 @@
                     @foreach (var document in Model)
                     {
                         <a href="~/Home/ThongTinSP/@document._id" class="card_box">
-                            <img style="object-fit: cover; width: 100%; margin-bottom: 10px;" src="@document.Img" />
-                            <p class="name_sp">@document.TenDoUong</p>
-                        </a>
-                        <a href="~/Home/ThongTinSP/@document._id" class="card_box">
-                            <img style="object-fit: cover; width: 100%; margin-bottom: 10px;" src="@document.Img" />
+                            <img src="data:image/jpeg;base64,@document.Img" style="object-fit: cover; width: 100%; margin-bottom: 10px;" />
+
+                         
                             <p class="name_sp">@document.TenDoUong</p>
                         </a>
                     }

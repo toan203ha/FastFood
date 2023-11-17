@@ -1,72 +1,171 @@
 ﻿@model IEnumerable<CNPM_NC_DoAnNhanh.Models.Vourcher>
-
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Home Page";
+    Layout = "~/Admin/Layout/_LayoutAdmin.cshtml";
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model._id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TenVoucher)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GiaTriVoucher)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayBatDau)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayKetThuc)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Img)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MoTa)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item._id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenVoucher)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GiaTriVoucher)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayBatDau)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayKetThuc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Img)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MoTa)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        margin-left:50px;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #343a40;
+        color:white;
+        margin-right:100px;
+        text-align:center;
+    }
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+    td{
+        text-align:center;
+    }
+    th:first-child,
+    td:first-child {
+        width: 5%; 
+        text-align: center; 
+    }
+
+    .btn-create {
+        background-color: #28a745;  
+        color: #fff;  
+        border: none;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+     
+    .btn-edit {
+        background-color: #007bff;  
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+   
+    .btn-details {
+        background-color: #17a2b8;  
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+    }
+    
+    .btn-delete {
+        background-color: #dc3545;  
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+</style>
+<div class="container mt-4">
+<div style="margin-right:100px;">
+    <div style="margin-left:50px;">
+        <h1>Danh Sách Voucher</h1>
+        <button class="btn-create">
+            <a asp-action="Create">Thêm Chức Vụ</a>
+        </button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+ 
+                <th>
+                    @Html.DisplayNameFor(model => model.TenVoucher)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GiaTriVoucher)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NgayBatDau)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NgayKetThuc)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Img)
+                </th>
+
+                 <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+         
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenVoucher)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GiaTriVoucher)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayBatDau)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayKetThuc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Img)
+                </td>
+
+                <td >
+                    <a class="btn-edit" asp-action="Edit" asp-route-id="@item._id">Chỉnh Sửa</a>
+
+                    <a class="btn-details" asp-action="Details" asp-route-id="@item._id">Chi Tiết</a>
+
+                    <a class="btn-delete" asp-action="Delete" asp-route-id="@item._id">Xóa</a>
+                </td>
+            </tr>
+
+        }
+    </table>
+</div>
+</div>

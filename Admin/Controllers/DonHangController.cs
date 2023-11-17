@@ -45,6 +45,37 @@ namespace CNPM_NC_DoAnNhanh.Admin.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        public ActionResult Xacnhan_kh(string? id)
+        {
+            var collection = _database.GetCollection<DonHang>("DonHang");
+            var result = collection.Find(x => x._id == id).FirstOrDefault();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            //if (result.TinhTrangDonHang == true)
+            //{
+            //    var filter = Builders<DonHang>.Filter.Eq("_id", id);
+            //    var update = Builders<DonHang>.Update
+            //        .Set("DaGiao", false);
+            //    var result_ = collection.UpdateOne(filter, update);
+            //}
+            //else if (result.TinhTrangDonHang == false)
+            {
+
+                var filter = Builders<DonHang>.Filter.Eq("_id", id);
+                var update = Builders<DonHang>.Update
+                    .Set("DaGiao", true);
+                var result_ = collection.UpdateOne(filter, update);
+            }
+            if (result == null)
+            {
+                return NotFound();
+            }
+            return RedirectToAction("Index");
+        }
         [HttpGet]
         public IActionResult Index()
         {

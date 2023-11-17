@@ -1,0 +1,105 @@
+﻿@model List<TopKhachHangModel>
+
+@{
+    ViewData["Title"] = "Thống Kê Khách Hàng Mua Nhiều Nhất";
+    Layout = "~/Admin/Layout/_LayoutAdmin.cshtml";
+    int tongSoLuongDonHang = 0;
+    decimal tongTongTienMua = 0;
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-r7azI19vpt46DgSLRvUamcJM56IEX6J2/JK7cpFUpDHHc4mkRjq4lW1BDNs/t9D0" crossorigin="anonymous">
+
+<style>
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+    }
+
+    h2 {
+        color: #007bff;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #343a40;
+        color: #fff;
+    }
+
+    tr:hover {
+        background-color: #f5f5f5;
+        transition: background-color 0.3s;
+    }
+</style>
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Top Khách Hàng Mua Nhiều Nhất</h2>
+    <form method="get" action="@Url.Action("TopKhachHangMuaNhieuNhat")">
+        <div class="row mb-3 d-flex align-items-center">
+            <div class="col-md-4">
+                <label for="fromDate" class="form-label">Từ ngày:</label>
+                <input type="date" id="fromDate" name="fromDate" class="form-control" />
+            </div>
+            <div class="col-md-4">
+                <label for="toDate" class="form-label">Đến ngày:</label>
+                <input type="date" id="toDate" name="toDate" class="form-control" />
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-filter"></i> Lọc
+                </button>
+            </div>
+        </div>
+    </form>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>STT</th>
+                <th>Mã Khách Hàng</th>
+                <th>Tên Khách Hàng</th>
+                <th>Số Lượng Đơn Hàng</th>
+                <th>Tổng Tiền Mua</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>@(i + 1)</td>
+                    <td>@Model[i].MaKH</td>
+                    <td>@Model[i].TenKhachHang</td>
+                    <td>@Model[i].SoLuongDonHang</td>
+                    <td>@Model[i].TongTienMua</td>
+                </tr>
+          
+                // Tính tổng
+                tongSoLuongDonHang += Model[i].SoLuongDonHang;
+                tongTongTienMua += Model[i].TongTienMua;
+           
+            }
+            <tr>
+                <td colspan="3"><strong>Tổng cộng</strong></td>
+                <td><strong>@tongSoLuongDonHang</strong></td>
+                <td><strong>@tongTongTienMua</strong></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Thêm thư viện Font Awesome -->
+<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+
+

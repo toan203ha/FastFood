@@ -1,0 +1,190 @@
+﻿@model BieuDo
+
+@{
+    ViewBag.Title = "Thống Kê";
+    Layout = "~/Admin/Layout/_LayoutAdmin.cshtml";
+    int SoLuongDonHang = 0;
+    decimal TongTienMua = 0;
+    var groupedData = ViewBag.GroupedData;
+}
+@using System.Globalization;
+<style>
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+    }
+
+    h2 {
+        color: #007bff;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #343a40;
+        color: #fff;
+    }
+
+    tr:hover {
+        background-color: #f5f5f5;
+        transition: background-color 0.3s;
+    }
+
+    .text-center{
+        color: #007bff;
+        font-size:20px;
+    }
+</style>
+<h1 style="color: aliceblue;font-size: 30px;text-align: center;background-color: #343a40;border-radius: 60px;">
+    THỐNG KÊ DOANH THU
+</h1>
+<div style="display:flex;">
+    <section id="myChartSection" class="container mt-4" style="background-color:white;width: 700px;height: 350px; margin-right:90px;">
+        <h1 class="text-center">Biều Đồ Doanh Thu</h1>
+        <canvas id="lineChart" width="250" height="100"></canvas>
+    </section>
+    <section id="myChartSection" class="container mt-5" style="background-color:white;width: 650px;height: 350px;">
+        <h1 class="text-center">Tổng Quan</h1>
+        <table>
+            <tr>
+                <td><strong>Tổng Sô Lượng Đơn Hàng </strong></td>
+                <td>@ViewBag.TongTien</td>
+            </tr>
+            <tr>
+                <td><strong>Tổng Đơn Hàng </strong></td>
+                <td>@ViewBag.TongDH</td>
+            </tr>
+            <tr>
+                <td><strong>Tổng số lượng khách hàng </strong></td>
+                <td>@ViewBag.TongKH</td>
+            </tr>
+        </table>
+    </section>
+</div>
+<div class="container mt-4">
+    <h2 class="text-center">Danh Sách Khách Hàng Mua Nhiều Nhất</h2>
+    <form method="get" action="@Url.Action("ThongKeTopKhachHangVaBieuDo")">
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="fromDate" class="form-label">Từ ngày:</label>
+                <input type="date" id="fromDate" name="fromDate" class="form-control" />
+                <label for="toDate" class="form-label">Đến ngày:</label>
+                <input type="date" id="toDate" name="toDate" class="form-control" />
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-filter"></i> Lọc
+                </button>
+            </div>
+        </div>
+    </form>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>STT</th>
+                <th>Mã Khách Hàng</th>
+                <th>Tên Khách Hàng</th>
+                <th>Số Lượng Đơn Hàng</th>
+                <th>Tổng Tiền Mua</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.TopKhachHang != null && Model.TopKhachHang.Any())
+            {
+                for (int i = 0; i < Model.TopKhachHang.Count; i++)
+                {
+                    <tr>
+                        <td>@(i + 1)</td>
+                        <td>@Model.TopKhachHang[i].MaKH</td>
+                        <td>@Model.TopKhachHang[i].TenKhachHang</td>
+                        <td>@Model.TopKhachHang[i].SoLuongDonHang</td>
+                        <td>@Model.TopKhachHang[i].TongTienMua</td>
+                    </tr>
+                     SoLuongDonHang += Model.TopKhachHang[i].SoLuongDonHang;
+                     TongTienMua += Model.TopKhachHang[i].TongTienMua;
+                }
+                <tr>
+                    <td colspan="3"><strong>Tổng cộng</strong></td>
+                    <td><strong>@SoLuongDonHang</strong></td>
+                    <td><strong>@TongTienMua</strong></td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5">Không có dữ liệu để hiển thị.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+ 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+@* <script>
+    var lineCtx = document.getElementById('lineChart').getContext('2d');
+    var lineChart = new Chart(lineCtx, {
+        type: 'line',
+        data: {
+            labels: @Html.Raw(Json.Serialize(Model?.TongTienData?.Select(item => item.NgayDatHang.month.ToString("dd/MM/yyyy")))),
+            datasets: [{
+                label: 'Tổng Tiền',
+                data: @Html.Raw(Json.Serialize(Model?.TongTienData?.Select(item => item.TongTien))),
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+ *@
+<script>
+    var lineCtx = document.getElementById('lineChart').getContext('2d');
+    var twelveMonths = @Html.Raw(Json.Serialize(Enumerable.Range(1, 12).Select(i => CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(i))));
+    var groupedData = @Html.Raw(ViewBag.GroupedData);
+
+    var lineChart = new Chart(lineCtx, {
+        type: 'line',
+        data: {
+            labels: twelveMonths,
+            datasets: [{
+                label: 'Tổng Tiền',
+                data: twelveMonths.map(month => {
+                    var monthData = groupedData.find(item => item.NgayDatHang === twelveMonths.indexOf(month) + 1);
+                    return monthData ? monthData.TongTien : 0;
+                }),
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+</script>
+
+
