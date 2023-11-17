@@ -1,0 +1,61 @@
+﻿@model IEnumerable<CNPM_NC_DoAnNhanh.Models.CTDH>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chi Tiết Đơn Hàng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <h2>Chi Tiết Đơn Hàng</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Mã ĐH</th>
+                <th>Tên SP</th>
+                <th>Số Lượng</th>
+                <th>Gía Sản Phẩm</th>
+                <th>Thành Tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.MaDH</td>
+                    <td>@item.MaSP</td>
+                    <td>@item.SoLuong</td>
+                    <td>@item.GiaSP</td>
+                    <td>@item.ThanhTien</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

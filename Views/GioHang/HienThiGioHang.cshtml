@@ -1,21 +1,48 @@
-﻿@using CNPM_NC_DoAnNhanh.Models
-@model List<CartItem>
+﻿@model List<CartItem>
 @{
     ViewBag.Title = "HienThiGioHang";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
 
-@*kiểm tra không nhập số lượng trong giỏ hàng*@
-<script>
-    function validateAndUpdateCart() {
-        var soLuong = document.getElementById("SoLuong").value;
-        if (soLuong < 1) {
-            alert("Số lượng không hợp lệ. Vui lòng nhập một số lớn hơn 0.");
-            return false; 
-        }
-        return true; 
+<style>
+    .btn-primary:hover {
+        background-color: #3498db;
+        border-color: #3498db;
+        color: #ffffff;
     }
-</script>
+
+    .btn-danger:hover {
+        background-color: #e74c3c;
+        border-color: #e74c3c;
+        color: #ffffff;
+    }
+
+    .border-effect:hover {
+        border: 2px solid #3498db;
+        padding: 5px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    /* Hiệu ứng cho dòng tổng số lượng và tổng tiền */
+    .total-row:hover {
+        background-color: #f5f5f5;
+    }
+
+    /* Hiệu ứng cho nút ĐẶT HÀNG */
+    .btn-dathang {
+        background-color: #4caf50;
+        border-color: #4caf50;
+        color: #ffffff;
+    }
+
+        .btn-dathang:hover {
+            background-color: #45a049;
+            border-color: #45a049;
+            color: #ffffff;
+        }
+</style>
+
 <h2 style="text-align:center">THÔNG TIN GIỎ HÀNG</h2>
 <table class="table table-bordered">
     <thead>
@@ -38,11 +65,7 @@
                 <td>@sach.MaSP</td>
                 <td>@sach.Ten</td>
                 <td><img src="~/Images/@sach.AnhBia" style="width:100%" /></td>
-                @using (Html.BeginForm("UpdateCart", "GioHang", new
-                {
-                    MaSP =
-                sach.MaSP
-                }))
+                @using (Html.BeginForm("UpdateCart", "GioHang", new { MaSP = sach.MaSP }))
                 {
                     <td>
                         <input type="number" min="1" value="@sach.Soluong" name="SoLuong" id="SoLuong" />
@@ -51,46 +74,42 @@
                     <td>@sach.Dongia</td>
                     <td>@sach.Total()</td>
                     <td>
-                        @Html.ActionLink("Chi tiết", "Details", "Food", new
-                        {
-                            id =
-                sach.MaSP
-                        }, new { @class = "btn btn-success" })
+                        @Html.ActionLink("Chi tiết", "Details", "Food", new { id = sach.MaSP }, new { @class = "btn btn-success" })
                     </td>
                     <td>
                         <button type="submit" class="btn btn-primary" onclick="return validateAndUpdateCart();">Cập nhật</button>
                     </td>
                 }
+
                 <td>
-                    @Html.ActionLink("Xóa hàng", "DeleteProduct", "GioHang", new
-                    {
-                        MaSP =
-                         sach.MaSP
-                    }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Xóa hàng", "DeleteProduct", "GioHang", new { MaSP = sach.MaSP }, new { @class = "btn btn-danger" })
                 </td>
             </tr>
         }
+
         @using (Html.BeginForm("ApplyVoucherToCart", "Cart", FormMethod.Post))
         {
-            <div class="form-group">
-                <label for="maVoucher">Mã Voucher:</label>
-                <input type="text" id="maVoucher" name="maVoucher" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-primary">Áp dụng Voucher</button>
+            <tr>
+                <td colspan="6"></td>
+                <td colspan="2">
+                    <div class="form-group">
+                        <label for="maVoucher">Mã Voucher:</label>
+                        <input type="text" id="maVoucher" name="maVoucher" class="form-control">
+                    </div>
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-primary">Áp dụng Voucher</button>
+                </td>
+            </tr>
         }
-        <tr style="font-weight:bold; text-align:right; color:red;">
 
+        <tr class="total-row">
             <td colspan="4">Tổng số lượng: @ViewBag.TongSL</td>
             <td colspan="5">Tổng tiền: @ViewBag.TongTien</td>
         </tr>
         <tr style="font-weight:bold; text-align:center;">
             <td colspan="9">
-
-                @Html.ActionLink("ĐẶT HÀNG", "DatHang", null, new
-                {
-                    @class = "btn btn-primary"
-                })
-
+                @Html.ActionLink("ĐẶT HÀNG", "DatHang", null, new { @class = "btn btn-dathang border-effect" })
             </td>
         </tr>
     </tbody>

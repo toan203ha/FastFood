@@ -7,7 +7,7 @@
         public string AnhBia { get; set; }
         public Double Dongia { get; set; }
         public int Soluong { get; set; }
-
+     
         public CartItem() { }
 
         public CartItem(string productId, string productName, double price, int quantity)

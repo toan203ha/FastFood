@@ -28,6 +28,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVmYXVsdFxJbmRleF8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/3/CÔNG NGHỆ PHẦN MỀM NÂNG CAO/Project/Views/DonHang/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9uSGFuZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/3/CÔNG NGHỆ PHẦN MỀM NÂNG CAO/Project/Views/DoUong/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9Vb25nXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -72,14 +76,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3/CÔNG NGHỆ PHẦN MỀM NÂNG CAO/Project/Views/Home/CartNoProduct.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXJ0Tm9Qcm9kdWN0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/3/CÔNG NGHỆ PHẦN MỀM NÂNG CAO/Project/Views/Home/CartProduct.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXJ0UHJvZHVjdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/3/CÔNG NGHỆ PHẦN MỀM NÂNG CAO/Project/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -94,6 +90,30 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/3/CÔNG NGHỆ PHẦN MỀM NÂNG CAO/Project/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3/CÔNG NGHỆ PHẦN MỀM NÂNG CAO/Project/Views/Home/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWFyY2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3/CÔNG NGHỆ PHẦN MỀM NÂNG CAO/Project/Views/Home/ThongTinSP.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUaG9uZ1RpblNQLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3/CÔNG NGHỆ PHẦN MỀM NÂNG CAO/Project/Views/KhachHangAdmin/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nQWRtaW5cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3/CÔNG NGHỆ PHẦN MỀM NÂNG CAO/Project/Views/KhachHangAdmin/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nQWRtaW5cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3/CÔNG NGHỆ PHẦN MỀM NÂNG CAO/Project/Views/KhachHangAdmin/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nQWRtaW5cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3/CÔNG NGHỆ PHẦN MỀM NÂNG CAO/Project/Views/KhachHangAdmin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/3/CÔNG NGHỆ PHẦN MỀM NÂNG CAO/Project/Views/Login/Create.cshtml]
@@ -144,12 +164,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WaWV3UHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3/CÔNG NGHỆ PHẦN MỀM NÂNG CAO/Project/Views/ShoppingCart/CartPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcHBpbmdDYXJ0XENhcnRQYXJ0aWFsLmNzaHRtbA==
+[D:/3/CÔNG NGHỆ PHẦN MỀM NÂNG CAO/Project/Views/User/ChiTietDonHang.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDaGlUaWV0RG9uSGFuZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/3/CÔNG NGHỆ PHẦN MỀM NÂNG CAO/Project/Views/ShoppingCart/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcHBpbmdDYXJ0XEluZGV4LmNzaHRtbA==
+[D:/3/CÔNG NGHỆ PHẦN MỀM NÂNG CAO/Project/Views/User/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/3/CÔNG NGHỆ PHẦN MỀM NÂNG CAO/Project/Views/User/Index_DH.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleF9ESC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/3/CÔNG NGHỆ PHẦN MỀM NÂNG CAO/Project/Views/User/Info.cshtml]

@@ -1,0 +1,121 @@
+﻿@using MongoDB.Driver;
+@model CNPM_NC_DoAnNhanh.Models.DoUong
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+ 
+
+    .main_shop {
+        margin-right: 200px;
+        margin-left: 100px;
+    }
+
+    .header_shop {
+        /*background-color: white;*/
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    }
+
+    .header_detail {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        font-size: large;
+    }
+
+    .buy {
+        background-color: white;
+        width: 220px;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 10px;
+        border-color: orangered;
+        font-size: larger
+    }
+
+        .buy:hover {
+            background-color: rgba(255,87,34,.1);
+        }
+
+    .add {
+        background-color: orangered;
+        width: 220px;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 10px;
+        border-color: orangered;
+        font-size: larger
+    }
+
+        .add:hover {
+            background-color: #FF3333;
+        }
+
+    .menu_shop ul li {
+        color: gray;
+        padding: 0 10px;
+        margin-bottom: 5px;
+    }
+</style>
+<div style="width: 100%; background-color: white;">
+    <div class="main_shop">
+        <div class="header_shop">
+            <img class="img_shop" style="object-fit: cover; width:45%;" src="@Model.Img" />
+            <div class="header_detail">
+                <p style="color: cadetblue;"> @GetTenLoaiSanPham(Model.LoaiSanPham) -> @Model.TenDoUong</p>
+                <strong style="font-size: 50px; margin-bottom: 5px;"> @Model.TenDoUong </strong>
+                <h3 class="pb-2">Loại: @GetTenLoaiSanPham(Model.LoaiSanPham)</h3>
+                <p> Giá:  @Model.GiaTien VNĐ</p>
+                <div style="display:flex">               
+                    <p  style="padding-left:10px"> 
+                        <form asp-controller="GioHang" asp-action="AddToCart" method="post">
+                            <input type="hidden" name="productId" value="@Model._id" />
+                            <input type="hidden" name="productName" value="@Model.TenDoUong" />
+                            <input type="hidden" name="price" value="@Model.GiaTien" />
+                            <input type="hidden" name="quantity" value="1" />
+                            <button class="add" style="color:white" type="submit">Add to Cart</button>
+                        </form>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: space-evenly;background-color: #faeeee;padding: 20px; border-top: inset;">
+            <div class="list_food" style="width: 55%; background-color: white; padding: 20px;">
+                <div class="box_search" style=" padding: 5px 5px; border: 0.3px solid gray; margin: 20px;">
+                    <i class="fas fa-search search-icon" style="font-size: 15px; margin-right: 10px; margin-left: 10px;"></i>
+                    <input type="text" placeholder="Tìm kiếm" />
+                </div>
+                <div class="card_food" style="margin-top: 20px; padding: 10px; display: flex; justify-content: space-between;">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+       
+            
+@inject IMongoDatabase _database
+@functions {
+    // Define the GetTenLoaiSanPham method in the view
+    string GetTenLoaiSanPham(string maLoaiSanPham)
+    {
+        var phanLoaiCollection = _database.GetCollection<PhanLoai>("PhanLoai");
+
+        // Tìm kiếm loại sản phẩm theo mã
+        var filter = Builders<PhanLoai>.Filter.Eq("_id", maLoaiSanPham);
+        var projection = Builders<PhanLoai>.Projection.Include("TenLoai");
+
+        var result = phanLoaiCollection.Find(filter).Project(projection).FirstOrDefault();
+
+        if (result != null)
+        {
+            return result["TenLoai"].AsString;
+        }
+
+        return "Không tìm thấy loại sản phẩm";
+    }
+}

@@ -1,0 +1,23 @@
+﻿@model List<CTDH>
+
+<h1>Chi Tiết Đơn Hàng</h1>
+
+@foreach (var ctdh in Model)
+{
+    <h2>Thông tin chi tiết đơn hàng</h2>
+    <p>Mã Sản Phẩm: @ctdh.MaSP</p>
+    <p>Mã Đơn Hàng: @ctdh.MaDH</p>
+    <p>Số Lượng: @ctdh.SoLuong</p>
+
+    <h3>Thông tin đồ uống</h3>
+    @foreach (var doUong in ctdh.DoUong)
+    {
+        <p>Tên Đồ Uống: @doUong.TenDoUong</p>
+    }
+
+    <h3>Thông tin đơn hàng</h3>
+    @foreach (var donHang in ctdh.DonHang)
+    {
+        <p>Mã Đơn Hàng: @donHang._id</p>
+    }
+}

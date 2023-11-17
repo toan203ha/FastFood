@@ -48,10 +48,7 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@* <a class="btn btn-primary" href="@Url.Action("AddProduct", "GioHang", new
-{ MaSP = Model._id })">
-    Đặt mua
-</a> *@
+ 
 <form asp-controller="GioHang" asp-action="AddToCart" method="post">
     <input type="hidden" name="productId" value="@Model._id" />
     <input type="hidden" name="productName" value="@Model.TenDoUong" />

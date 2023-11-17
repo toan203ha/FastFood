@@ -36,7 +36,7 @@ namespace CNPM_NC_DoAnNhanh.Controllers
 
                 ViewBag.UserName = khachHang.HoTenKH;
                 ViewBag.UserID = khachHang._id;
-                return RedirectToAction("Index", "DoUong");
+                return RedirectToAction("Index", "Home");
             }
             // Đăng nhập thất bại, hiển thị thông báo lỗi
             ViewBag.ErrorInfo = "Sai thông tin đăng nhập";
@@ -76,6 +76,13 @@ namespace CNPM_NC_DoAnNhanh.Controllers
             return View("RegisterUser", khachHang);
         }
 
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("taikhoan");
+            HttpContext.Session.Remove("UserID");
+            HttpContext.Session.Remove("UserName");
+            return RedirectToAction("Index","Home");
+        }
 
         [HttpGet]
         public IActionResult Create()
