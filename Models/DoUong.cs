@@ -23,5 +23,6 @@ namespace CNPM_NC_DoAnNhanh.Models
         public string Size { get; set; } = "";
         [BsonElement("LoaiSanPham")] // Thêm trường để lưu loại sản phẩm
         public string LoaiSanPham { get; set; } = "";
+ 
     }
 }

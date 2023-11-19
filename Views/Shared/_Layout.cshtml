@@ -8,6 +8,8 @@
     @Scripts.Render("~/bundles/modernizr")*@
     @*<link rel="stylesheet" href="~/wwwroot/css"/>
     <script src="~/bundles/modernizr"></script>*@
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+    <script src="~/js/cart.js"></script>
     <script src="https://kit.fontawesome.com/c0b1a641d5.js" crossorigin="anonymous"></script>
     <style>
         body {
@@ -122,12 +124,41 @@
         }
 
         .cart-icon {
+
             margin-left: auto; /* Đẩy nó về phía bên phải */
+
+            margin-left: auto; 
         }
 
         .drop{
             text-decoration:none;
         }
+
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-left, .footer-right {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+            .footer-right a {
+                color: #fff;  
+            }
     </style>
 </head>
 @using Microsoft.AspNetCore.Http
@@ -145,6 +176,7 @@
                     <li><a href="#" class="option">Liên Hệ</a></li>
                 </ul>
             </div>
+
             <div class="search-bar">
                 <input type="text" placeholder="Tìm kiếm..." />
                 <button type="submit"><i class="fas fa-search search-icon"></i></button>
@@ -155,6 +187,13 @@
             </div>
                 <a href="~/GioHang/Index" class="fa fa-shopping-cart" style="padding-top:20px; font-size:25px; color:black;"></a>
             </div> 
+=======
+            <div class="search-bar" style="padding: 7px;border-radius: 20px;">
+                <input style="padding: 10px 2px; border-radius: 4px;border-color: orangered;" type="text" placeholder="Tìm kiếm..." />
+                <button style="    background-color: orangered;color: white; padding: 12px; border-radius: 6px; border: 0;" type="submit">
+                    <i class="fas fa-search search-icon"></i>
+                </button>
+            </div>
             <div class="user-actions">
                 @if (@HttpContextAccessor.HttpContext.Session.GetString("UserName") == null)
                 {
@@ -166,7 +205,11 @@
                 <div class="user-info" id="userDropdown">
                         <span style="margin-right: 30px;font-size: 20px;">Hello! @HttpContextAccessor.HttpContext.Session.GetString("UserName")</span>
                     <ul class="dropdown-list">
+
                             <li><a href="#" class="drop">Thông Tin Cá Nhân</a></li>
+
+                            <li><a href="~/User/Info/@HttpContextAccessor.HttpContext.Session.GetString("UserID")" class="drop">Thông Tin Cá Nhân</a></li>
+
                         <li><a href="~/User/Index_DH/@HttpContextAccessor.HttpContext.Session.GetString("UserID")" class="drop">Đơn Hàng Đã Đặt</a></li>
                             <li><a href="~/Login/Logout" class="drop">Đăng Xuất</a></li>
                     </ul>
@@ -176,15 +219,39 @@
                     <a href="~/GioHang/Index" class="fa fa-shopping-cart" style="font-size: 25px; color: black;"></a>
                 </div>
             </div>
+
         </div>
     </div>
 
     <div class="container body-content">
         @RenderBody()
-  
+
         <footer>
             <hr />
+
+
+        <footer style="margin-top: 170px;">
+            <div class="footer-container">
+                <div class="footer-left">
+                    <p>&copy; 2023 KFC Vietnam</p>
+                    <hr />
+                    <p>CÔNG TY LIÊN DOANH TNHH KFC VIỆT NAM</p>
+                    <p>Số 292 Bà Triệu, P. Lê Đại Hành, Q. Hai Bà Trưng, TP. Hà Nội.</p>
+                    <p>Điện thoại: (028) 38489828</p>
+                    <p>Email: <a href="mailto:lienhe@kfcvietnam.com.vn">lienhe@kfcvietnam.com.vn</a></p>
+                    <p>Mã số thuế: 0100773885</p>
+                    <p>Ngày cấp: 29/10/1998 - Nơi cấp: Cục Thuế Thành Phố Hà Nội</p>
+                </div>
+                <div class="footer-right">
+                    <p><a href="#">Chính sách</a></p>
+                    <p><a href="#">Chính sách hoạt động</a></p>
+                    <p><a href="#">Chính sách và quy định</a></p>
+                    <p><a href="#">Chính sách bảo mật thông tin</a></p>
+                    <p><a href="#">Download App</a></p>
+                </div>
+            </div>
         </footer>
     </div>
 </body>
 </html>
+

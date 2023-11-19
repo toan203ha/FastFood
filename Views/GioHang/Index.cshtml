@@ -12,6 +12,11 @@
             border-color: #3498db;
             color: #ffffff;
         }
+        th{
+            color:white;
+            background-color:#374A4A;
+            text-align:center;
+        }
 
     /* Hiệu ứng cho nút "Xóa" */
     .btn-delete {
@@ -33,6 +38,13 @@
         .btn-dathang:hover {
             background-color: #27ae60;
             border-color: #27ae60;
+        background-color: #0074FF;
+        border-color: #0074FF;
+        color: #ffffff;
+    }
+        .btn-dathang:hover {
+            background-color: #0074FF;
+            border-color: #0074FF;
             color: #ffffff;
         }
     a {
@@ -92,6 +104,14 @@
                         <th style="border: 1px solid #ddd; padding: 10px;">Giá</th>
                         <th style="border: 1px solid #ddd; padding: 10px;">Số lượng</th>
                         <th style="border: 1px solid #ddd; padding: 10px;">Tổng tiền</th>
+            <table style="width:90%; border-collapse: collapse; border: 1px solid #ddd;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+                <thead>
+                    <tr>
+                        <th>Hình Ảnh</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">Sản Phẩm</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">Giá</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">Số Lượng</th>
+                        <th style="border: 1px solid #ddd; padding: 10px;">Tổng Tiền</th>
                         <th style="border: 1px solid #ddd; padding: 10px;">Xóa</th>
                     </tr>
                 </thead>
@@ -99,6 +119,9 @@
                     @foreach (var item in Model)
                     {
                         <tr>
+                            <td>                   
+                                <img src="data:image/jpeg;base64,@item.AnhBia" height="50" width="50" />
+                            </td>
                             <td style="border: 1px solid #ddd; padding: 10px;">@item.Ten</td>
                             <td style="border: 1px solid #ddd; padding: 10px;">@item.Dongia</td>
                             <td style="border: 1px solid #ddd; padding: 10px;">
@@ -119,6 +142,7 @@
                 </tbody>
             </table>
         </div>
+        <div style="margin-left: 620px;margin-top: 20px;width: 570px;border-style: outset;padding: 25px 25px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
         <div class="col-md-4">
  
             <form asp-controller="GioHang" asp-action="ApplyDiscountCode" method="post">
@@ -161,6 +185,27 @@
                     <a style="color:white;" asp-controller="GioHang" asp-action="DatHang" >Đặt Hàng</a>
                 </button>
             </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <p class="text-right"><strong>Tổng Tiền: @Model.Sum(item => item.Dongia * item.Soluong) | Tổng Số Lượng: @Model.Sum(item => item.Soluong)</strong></p>
+           
+            </div>
+          
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" style="text-align:center;">
+                    <button style="padding: 5px 15px; border-radius: 20px;color:red;" class="btn btn-primary">
+                        <a style="color:white;" href="#">Quay Lại</a>
+                    </button>
+                <button style="padding: 5px 15px; border-radius: 20px;"  class="btn btn-primary btn-dathang">
+                    <a style="color:white;" asp-controller="GioHang" asp-action="DatHang" >Đặt Hàng</a>
+                </button>
+           
+            </div>
+        </div>
         </div>
     </div>
 }

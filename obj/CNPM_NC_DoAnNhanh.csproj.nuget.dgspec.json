@@ -67,6 +67,10 @@
               "target": "Package",
               "version": "[1.9.1, )"
             },
+            "X.PagedList.Mvc.Core": {
+              "target": "Package",
+              "version": "[8.4.7, )"
+            },
             "boost": {
               "target": "Package",
               "version": "[1.83.0, )"

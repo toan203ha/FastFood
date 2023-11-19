@@ -1,4 +1,5 @@
-﻿@model IEnumerable<CNPM_NC_DoAnNhanh.Models.CTDH>
+@using MongoDB.Driver;
+@model IEnumerable<CNPM_NC_DoAnNhanh.Models.CTDH>
 
 <!DOCTYPE html>
 <html>
@@ -38,6 +39,7 @@
         <thead>
             <tr>
                 <th>Mã ĐH</th>
+                <th>Ngày Đặt Hàng</th>
                 <th>Tên SP</th>
                 <th>Số Lượng</th>
                 <th>Gía Sản Phẩm</th>
@@ -53,9 +55,58 @@
                     <td>@item.SoLuong</td>
                     <td>@item.GiaSP</td>
                     <td>@item.ThanhTien</td>
+                    <td>@Getngaydathang(item.MaDH)</td>
+                    <td>@GetTenSanPham(item.MaSP)</td>
+                    <td>@item.SoLuong</td>
+                    <td>@item.GiaSP</td>
+                    <td>@(item.SoLuong * item.GiaSP)</td>
                 </tr>
             }
+            <tr >
+                <td colspan="3" style="text-align:center">Tổng:</td>
+                <td>@Model.Sum(b => b.SoLuong)</td>
+                <td>@Model.Sum(b => b.GiaSP)</td>
+            </tr>
+ 
         </tbody>
     </table>
 </body>
 </html>
+
+
+@inject IMongoDatabase _database
+@functions {
+    // Define the GetTenLoaiSanPham method in the view
+    string Getngaydathang(string MADH)
+    {
+        var phanLoaiCollection = _database.GetCollection<DonHang>("DonHang");
+        var filter = Builders<DonHang>.Filter.Eq("_id", MADH);
+        var projection = Builders<DonHang>.Projection.Include("NgayDatHang");
+        var result = phanLoaiCollection.Find(filter).Project(projection).FirstOrDefault();
+        if (result != null)
+        {
+            return result["NgayDatHang"].AsDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+        }
+
+        return "Không tìm thấy đơn hàng";
+    }
+}
+
+
+@inject IMongoDatabase _database
+@functions {
+    string GetTenSanPham(string masp)
+    {
+        var phanLoaiCollection = _database.GetCollection<DoUong>("DoUong");
+        var filter = Builders<DoUong>.Filter.Eq("_id", masp);
+        var projection = Builders<DoUong>.Projection.Include("TenDoUong");
+
+        var result = phanLoaiCollection.Find(filter).Project(projection).FirstOrDefault();
+
+        if (result != null)
+        {
+            return result["TenDoUong"].AsString;
+        }
+        return "Không tìm thấy  sản phẩm";
+    }
+}

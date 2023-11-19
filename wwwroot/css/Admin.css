@@ -206,8 +206,7 @@ body {
     width: calc(100% - var(--page-header-width));
     min-height: 100vh;
     padding: 30px;
-    color: white;
-    background-image: url('	https://shopeefood.vn/app/assets/img/main-banner.jpg?45bff8c9ec408a5ba51f9fdef662324e');
+    color: black;
     top:-24px;
 }
 

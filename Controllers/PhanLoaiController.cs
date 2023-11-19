@@ -35,7 +35,7 @@ namespace CNPM_NC_DoAnNhanh.Controllers
             {
                 var phanLoaiCollection = _database.GetCollection<PhanLoai>("PhanLoai");
                 phanLoaiCollection.InsertOne(phanLoai);
-                return RedirectToAction("Index"); 
+                return RedirectToAction("Index");
             }
             return View(phanLoai);
         }
@@ -47,12 +47,34 @@ namespace CNPM_NC_DoAnNhanh.Controllers
             return PartialView("DanhSachPartial", danhSachLoaiSanPham);
         }
 
-        public IActionResult DanhSachSanPhamTheoDanhMuc(string id)
+        public IActionResult DanhSachSanPhamTheoDanhMuc(string id, string sortBy)
         {
-             var productCollection = _database.GetCollection<DoUong>("DoUong");
+            var productCollection = _database.GetCollection<DoUong>("DoUong");
             var danhSachSanPham = productCollection.Find(x => x.LoaiSanPham == id).ToList();
+            ViewBag.Id=id;
+            if (!string.IsNullOrEmpty(sortBy))
+            {
+                switch (sortBy)
+                {
+                    case "name":
+                        danhSachSanPham = danhSachSanPham.OrderBy(p => p.TenDoUong).ToList();
+                        break;
+                    case "price":
+                        danhSachSanPham = danhSachSanPham.OrderBy(p => p.GiaTien).ToList();
+                        break;
+                    case "name_desc":
+                        danhSachSanPham = danhSachSanPham.OrderByDescending(p => p.TenDoUong).ToList();
+                        break;
+                    case "price_desc":
+                        danhSachSanPham = danhSachSanPham.OrderByDescending(p => p.GiaTien).ToList();
+                        break;
+                    default:
+                        break;
+                }
+            }
 
             return View("DanhSachSanPham", danhSachSanPham);
         }
+
     }
 }

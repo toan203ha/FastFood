@@ -1581,3 +1581,9 @@ D:\3\CÔNG NGHỆ PHẦN MỀM NÂNG CAO\Project\obj\Debug\net6.0\refint\CNPM_NC
 D:\3\CÔNG NGHỆ PHẦN MỀM NÂNG CAO\Project\obj\Debug\net6.0\CNPM_NC_DoAnNhanh.pdb
 D:\3\CÔNG NGHỆ PHẦN MỀM NÂNG CAO\Project\obj\Debug\net6.0\CNPM_NC_DoAnNhanh.genruntimeconfig.cache
 D:\3\CÔNG NGHỆ PHẦN MỀM NÂNG CAO\Project\obj\Debug\net6.0\ref\CNPM_NC_DoAnNhanh.dll
+D:\CNPM_NC\Thư mục mới\FastFood_Web - Copy\bin\Debug\net6.0\JetBrains.Annotations.dll
+D:\CNPM_NC\Thư mục mới\FastFood_Web - Copy\bin\Debug\net6.0\X.PagedList.dll
+D:\CNPM_NC\Thư mục mới\FastFood_Web - Copy\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
+D:\CNPM_NC\Thư mục mới\FastFood_Web - Copy\obj\Debug\net6.0\CNPM_NC_DoAnNhanh.MvcApplicationPartsAssemblyInfo.cs
+>>>>>>> 664dff47a52044e197f901efbf77b6446d2f3d10
+D:\3\CÔNG NGHỆ PHẦN MỀM NÂNG CAO\Project\obj\Debug\net6.0\CNPM_NC_DoAnNhanh.MvcApplicationPartsAssemblyInfo.cs

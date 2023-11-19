@@ -75,9 +75,9 @@ namespace CNPM_NC_DoAnNhanh.Controllers
             return View(cart);
         }
 
-        public IActionResult AddToCart(string productId, string productName, int price, int quantity)
+        public IActionResult AddToCart(string productId, string productName, int price, int quantity, string img)
         {
-
+            string imageUrl = GetImageUrlFromDatabase(productId);  
             var cart = HttpContext.Session.Get<List<CartItem>>("Cart") ?? new List<CartItem>();
             var existingItem = cart.FirstOrDefault(item => item.MaSP == productId);
 
@@ -87,12 +87,21 @@ namespace CNPM_NC_DoAnNhanh.Controllers
             }
             else
             {
-                var newItem = new CartItem(productId, productName, price, quantity);
+                var newItem = new CartItem(productId, productName, price, quantity, imageUrl);
                 cart.Add(newItem);
             }
             HttpContext.Session.Set("Cart", cart);
 
             return RedirectToAction("Index");
+        }
+         public string GetImageUrlFromDatabase(string productId)
+        {
+            var collection = _database.GetCollection<DoUong>("DoUong");  
+
+
+             var product = collection.Find(p => p._id == productId).FirstOrDefault();
+
+              return product?.Img ?? "default_image_url.jpg";  
         }
 
         //[HttpPost]
@@ -246,6 +255,7 @@ namespace CNPM_NC_DoAnNhanh.Controllers
                     donhang.HinhThucThanhToan = true; // tiền mặt
                     donhang.HinhThucGiaoHang = false;
                     donhang.DaGiao = false; // shiper xác nhận đã giao hay chưa
+                    donhang.DaGiao = false; // xác nhận đã giao khách hàng hay chưa
                     collection.InsertOne(donhang);
 
                     foreach (var sanpham in giohang)

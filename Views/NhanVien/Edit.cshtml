@@ -1,0 +1,118 @@
+﻿@model CNPM_NC_DoAnNhanh.Models.NhanVien
+
+@{
+    ViewBag.Title = "Chỉnh Sửa Nhân Viên";
+    Layout = "~/Admin/Layout/_LayoutAdmin.cshtml";
+}
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    h2 {
+        color: #007bff;
+    }
+
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        margin: auto;
+    }
+
+    form {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #343a40;
+    }
+
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+
+    .btn-save, .btn-cancel {
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .btn-save {
+        background-color: #28a745;
+        color: #fff;
+    }
+
+    .btn-cancel {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+    .validation-error {
+        color: #dc3545;
+        margin-top: -8px;
+        margin-bottom: 16px;
+    }
+</style>
+
+<div class="container">
+    <h2 class="text-center">Chỉnh Sửa Nhân Viên</h2>
+
+    <form asp-action="Edit" method="post" onsubmit="return validateForm()">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label for="TenNV">Tên Nhân Viên</label>
+            <input type="text" asp-for="TenNV" />
+            <span asp-validation-for="TenNV" class="validation-error" id="TenNVError"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="MaCV">Chức Vụ</label>
+            <input type="text" asp-for="MaCV" />
+            <span asp-validation-for="MaCV" class="validation-error" id="MaCVError"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="TK">Tài Khoản</label>
+            <input type="text" asp-for="TK" />
+            <span asp-validation-for="TK" class="validation-error" id="TKError"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="PASS">Mật Khẩu</label>
+            <input type="password" asp-for="PASS" />
+            <span asp-validation-for="PASS" class="validation-error" id="PASSError"></span>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-save">Lưu</button>
+            <a asp-action="Index" class="btn btn-cancel">Quay Lại</a>
+        </div>
+    </form>
+</div>
+
+ 
+

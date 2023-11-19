@@ -10,14 +10,14 @@
      
         public CartItem() { }
 
-        public CartItem(string productId, string productName, double price, int quantity)
+        public CartItem(string productId, string productName, double price, int quantity, string img)
         {
             MaSP = productId;
             Ten = productName;
             Dongia = price;
             Soluong = quantity;
+            AnhBia = img;  
         }
-
         public double Total()
         {
             return Soluong * Dongia;

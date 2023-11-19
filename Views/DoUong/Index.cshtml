@@ -1,10 +1,12 @@
-﻿@model List<DoUong>
-
+﻿@using X.PagedList.Mvc.Core
+@model IPagedList<DoUong>
 @{
     ViewBag.Title = "Home Page";
     Layout = "~/Admin/Layout/_LayoutAdmin.cshtml";
 }
 @using Microsoft.AspNetCore.Http
+@using X.PagedList;
+@using X.PagedList.Web.Common;
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 
 
@@ -36,12 +38,65 @@
         background-color:orangered;
         border-radius:3px;
     }
+
+
+    form {
+        display: flex;
+        flex-direction: row;
+        align-items: center; /* Canh giữa theo chiều dọc */
+    }
+
+        form > div {
+            margin-right: 10px;
+            border: 1px solid #ddd; /* Viền xung quanh khung */
+            padding: 5px; /* Khoảng cách giữa nội dung và khung */
+            border-radius: 5px; /* Góc bo tròn */
+            display: flex;
+            align-items: center;
+        }
+
+    button[type="submit"] {
+        background-color: #007BFF; /* Màu nền */
+        color: #fff; /* Màu chữ */
+        border: none;
+        padding: 8px 12px;
+        cursor: pointer;
+    }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Màu nền khi di chuột qua */
+        }
 </style>
+<head>
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+</head>
 <body>
-    <form id="search-form" method="get" asp-action="Search">
-        <div class="form-group" style="margin-bottom:20px">
-            <label for="keyword" style="font-size:25px; padding-left:100px; font-family:math;">Tìm sản phẩm:</label>
-            <input type="text" class="form-control" id="keyword" name="keyword" placeholder="Tìm kiếm..." />
+    <form asp-action="Index" method="get">
+        <div>
+            <label for="keyword">
+                Tìm Kiếm:
+            </label>
+            <input type="text" id="keyword" name="keyword" value="@ViewBag.Keyword" style="border: none; outline: none; padding: 5px; width: 150px;" />
+        </div>
+
+        <div>
+            <label for="loaiSanPham">
+               Danh Mục:
+            </label>
+            <select id="loaiSanPham" name="loaiSanPham" style="border: none; outline: none; padding: 5px;">
+                <option value="">-- Chọn danh mục --</option>
+                @foreach (var loaiSanPham in ViewBag.LoaiSanPhamList)
+                {
+                    <option value="@loaiSanPham.Text">@loaiSanPham.Text</option>
+                }
+            </select>
+        </div>
+
+        <div>
+            <button type="submit">
+                <i class="fas fa-search"></i> Tìm kiếm
+            </button>
         </div>
     </form>
     <script>
@@ -75,7 +130,9 @@
             {
                 <tr>
                     <td>@document.TenDoUong</td>
-                    <td>@document.Img</td>
+                    <td>
+                        <img src="data:image/jpeg;base64,@document.Img" height="50" width="50" />
+                    </td>
                     <td>@document.GiaTien</td>
                     <td>@document.SoLuong</td>
                     <td>@document.Size</td>
@@ -97,3 +154,5 @@
         </a>
     </div>
 </body>
+@* @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions()))
+ *@

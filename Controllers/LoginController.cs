@@ -36,6 +36,7 @@ namespace CNPM_NC_DoAnNhanh.Controllers
 
                 ViewBag.UserName = khachHang.HoTenKH;
                 ViewBag.UserID = khachHang._id;
+
                 return RedirectToAction("Index", "Home");
             }
             // Đăng nhập thất bại, hiển thị thông báo lỗi

@@ -2,6 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MongoDB.Driver;
+using System.Drawing;
+using System.IO;
+using System.Text;
+using X.PagedList;
 
 namespace CNPM_NC_DoAnNhanh.Controllers
 {
@@ -34,23 +38,49 @@ namespace CNPM_NC_DoAnNhanh.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(string keyword, string loaiSanPham, int? page)
         {
             var doUongCollection = _database.GetCollection<DoUong>("DoUong");
             var phanLoaiCollection = _database.GetCollection<PhanLoai>("PhanLoai");
-
-            var danhSachDoUong = doUongCollection.Find(_ => true).ToList();
+            // Tìm danh mục theo tên
+            var danhMuc = phanLoaiCollection.Find(x => x.TenLoai == loaiSanPham).FirstOrDefault();
+            var keywordFilter = Builders<DoUong>.Filter.Empty;
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                   keywordFilter = Builders<DoUong>.Filter.Where(u => u.TenDoUong.ToLower().Contains(keyword));
+            }
+            // Tạo bộ lọc cho loại sản phẩm
+            var loaiSanPhamFilter = Builders<DoUong>.Filter.Empty;
+            if (danhMuc != null)
+            {
+                loaiSanPhamFilter = Builders<DoUong>.Filter.Eq("LoaiSanPham", danhMuc._id);
+            }
+            // Kết hợp cả hai bộ lọc
+            var combinedFilter = Builders<DoUong>.Filter.And(keywordFilter, loaiSanPhamFilter);
+            var danhSachDoUong = doUongCollection.Find(combinedFilter).ToList();
             var danhSachLoaiSanPham = phanLoaiCollection.Find(_ => true).ToList();
+
             // lay bằng tên
+
+            ViewBag.LoaiSanPhamList = new SelectList(danhSachLoaiSanPham, "_id", "TenLoai");
+
             foreach (var doUong in danhSachDoUong)
             {
-                var loaiSanPham = danhSachLoaiSanPham.FirstOrDefault(l => l._id == doUong.LoaiSanPham);
-                if (loaiSanPham != null)
+                var loaiSanPham_ = danhSachLoaiSanPham.FirstOrDefault(l => l._id == doUong.LoaiSanPham);
+                if (loaiSanPham_ != null)
                 {
-                    doUong.LoaiSanPham = loaiSanPham.TenLoai;
+                    doUong.LoaiSanPham = loaiSanPham_.TenLoai;
                 }
             }
             return View(danhSachDoUong);
+
+            int pageSize = 10; // Số lượng phần tử trên mỗi trang
+            int pageNumber = page ?? 1; // Trang hiện tại, mặc định là trang 1
+
+            // Thực hiện phân trang cho danh sách sản phẩm
+            var pagedList = danhSachDoUong.ToPagedList(pageNumber, pageSize);
+            return View(pagedList);
+
         }
 
         [HttpGet]
@@ -84,6 +114,53 @@ namespace CNPM_NC_DoAnNhanh.Controllers
             return View(doUong);
         }
 
+        [HttpGet]
+        public IActionResult upimage()
+        {
+            var phanLoaiCollection = _database.GetCollection<PhanLoai>("PhanLoai");
+            var danhSachLoaiSanPham = phanLoaiCollection.Find(_ => true).ToList();
+
+            ViewBag.LoaiSanPhamList = new SelectList(danhSachLoaiSanPham, "_id", "TenLoai");
+
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> upimage(DoUong doUong, IFormFile image)
+        {
+            if (ModelState.IsValid)
+            {
+                if (image != null && image.Length > 0)
+                {
+                    using (var stream = new MemoryStream())
+                    {
+                        await image.CopyToAsync(stream);
+                        doUong.Img = Convert.ToBase64String(stream.ToArray());
+                    }
+                }
+
+                var selectedLoaiSanPham = Request.Form["LoaiSanPham"];
+                doUong.LoaiSanPham = selectedLoaiSanPham;
+
+                var doUongCollection = _database.GetCollection<DoUong>("DoUong");
+                await doUongCollection.InsertOneAsync(doUong);
+
+                return RedirectToAction("Index");
+            }
+
+            // Xử lý trường hợp ModelState không hợp lệ hoặc các xác nhận khác
+
+            var phanLoaiCollection = _database.GetCollection<PhanLoai>("PhanLoai");
+            var danhSachLoaiSanPham = phanLoaiCollection.Find(_ => true).ToList();
+            ViewBag.LoaiSanPhamList = new SelectList(danhSachLoaiSanPham, "_id", "TenLoai");
+
+            return View(doUong);
+        }
+
+
+
+
 
         [HttpGet]
         public IActionResult Edit(string id)
@@ -102,6 +179,10 @@ namespace CNPM_NC_DoAnNhanh.Controllers
             return View(monAn);
         }
 
+
+
+
+
         [HttpPost]
         public IActionResult Edit(DoUong monAn)
         {
@@ -119,7 +200,6 @@ namespace CNPM_NC_DoAnNhanh.Controllers
                     .Set("SoLuong", monAn.SoLuong)
                     .Set("Size", monAn.Size)
                     .Set("LoaiSanPham", monAn.LoaiSanPham);
-
                 var result = collection.UpdateOne(filter, update);
 
                 if (result.IsAcknowledged && result.ModifiedCount > 0)
@@ -128,7 +208,7 @@ namespace CNPM_NC_DoAnNhanh.Controllers
                 }
                 else
                 {
-                    // Xử lý lỗi
+
                 }
             }
             return View(monAn);
@@ -146,7 +226,7 @@ namespace CNPM_NC_DoAnNhanh.Controllers
             }
             else
             {
-                // Xử lý lỗi
+        
             }
             return RedirectToAction("Index");
         }

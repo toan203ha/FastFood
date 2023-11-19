@@ -15,6 +15,7 @@ namespace CNPM_NC_DoAnNhanh.Models
         [BsonElement("NgayDatHang")]
         public DateTime NgayDatHang { get; set; }
         [BsonElement("TongTien")]
+        [BsonRepresentation(BsonType.Decimal128)] // Đặt kiểu ObjectId cho trường MaCV
         public decimal TongTien { get; set; }
         [BsonElement("TinhTrangDonHang")]
         public Nullable<bool> TinhTrangDonHang { get; set; }
@@ -30,10 +31,6 @@ namespace CNPM_NC_DoAnNhanh.Models
         public Nullable<bool> HinhThucGiaoHang { get; set; }
         [BsonElement("DaGiao")]
         public Nullable<bool> DaGiao { get; set; }
-
-
-
-
 
     }
 
