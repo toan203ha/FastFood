@@ -1,0 +1,56 @@
+﻿@model CNPM_NC_DoAnNhanh.Models.KhachHang
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Admin/Layout/_LayoutAdmin.cshtml";
+
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>KhachHang</h4>
+    <hr />
+    <dl class="row">
+        <dl class="col-sm-2">
+            @Html.DisplayNameFor(model => model.HoTenKH)
+        </dl>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HoTenKH)
+        </dd>
+        <dl class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SDT)
+        </dl>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+        <dl class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DiaChi)
+        </dl>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+        <dl class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vi)
+        </dl>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vi)
+        </dd>
+        <dl class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TK)
+        </dl>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TK)
+        </dd>
+        <dl class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PASS)
+        </dl>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PASS)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */}) |
+    <a asp-action="Index">Back to List</a>
+</div>
